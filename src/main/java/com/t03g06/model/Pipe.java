@@ -1,16 +1,11 @@
 package com.t03g06.model;
 
 public class Pipe {
-    private int x; // posição na horizontal
-    private final int gapStart; // inicio do espaço entre os canos em y
-    private final int gapSize; // tamanho do espaçamento entre os canos
+    private int x; // posição horizontal do cano
+    private final int gapStart; // início do e
+    private final int gapSize; // tamanho do gap
+    private boolean scored = false;
 
-    /*
-        Ex.:
-        Pipe pipe = new Pipe(80, 10, 12);
-        O pipe vai ser posicionado em x = 80
-        Terá um gap da linha 10 até a linha 22 (10 + 12)
-     */
     public Pipe(int x, int gapStart, int gapSize) {
         this.x = x;
         this.gapStart = gapStart;
@@ -29,8 +24,20 @@ public class Pipe {
         return gapSize;
     }
 
-    // movimenta o pipe para a esquerda
     public void moveLeft() {
-        this.x --;
+        this.x--;
+    }
+
+    public boolean isScored() {
+        return scored;
+    }
+
+    public void setScored(boolean scored) {
+        this.scored = scored;
+    }
+
+    public boolean isOutOfScreen(int screenWidth) {
+        return x + screenWidth < 0; // verifica se o cano saiu da tela
     }
 }
+
