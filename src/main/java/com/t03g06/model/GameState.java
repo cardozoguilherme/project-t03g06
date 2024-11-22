@@ -70,7 +70,7 @@ public class GameState {
 
     public void addNewPipe() {
         if (!pipes.isEmpty()) {
-            int lastPipeX = pipes.get(pipes.size() - 1).getX();
+            int lastPipeX = pipes.getLast().getX();
             addPipe(lastPipeX + PIPE_WIDTH + PIPE_DISTANCE);
         }
     }
@@ -93,8 +93,8 @@ public class GameState {
         }
 
         // remove canos que estão fora da tela e adiciona novos
-        if (!pipes.isEmpty() && pipes.get(0).isOutOfScreen(WIDTH)) {
-            pipes.remove(0);
+        if (!pipes.isEmpty() && pipes.getFirst().isOutOfScreen(WIDTH)) {
+            pipes.removeFirst();
             addNewPipe();
         }
 

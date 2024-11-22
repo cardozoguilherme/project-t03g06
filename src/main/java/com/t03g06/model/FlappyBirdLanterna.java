@@ -21,6 +21,7 @@ public class FlappyBirdLanterna {
         try {
             // personaliza a fonte
             URL resource = FlappyBirdLanterna.class.getClassLoader().getResource("square.ttf");
+            assert resource != null;
             File fontFile = new File(resource.toURI());
             Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
             Font loadedFont = font.deriveFont(Font.PLAIN, 16);

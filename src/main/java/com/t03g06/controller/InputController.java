@@ -19,9 +19,7 @@ public class InputController {
             } else if (key == 'r') {
                 gameState.resetGame(); // reinicia o jogo
             }
-        } else if (keyStroke.getKeyType() == KeyType.Escape) {
-            return false; // sai do jogo
-        }
+        } else return keyStroke.getKeyType() != KeyType.Escape; // sai do jogo
         return true; // continua o jogo
     }
 }
