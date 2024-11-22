@@ -33,7 +33,7 @@ de o jogador tem como objetivo passar pela maior quantidade de obstáculos que c
 
 ![MockupMENU.png](Docs%2FImages%2FMockupMENU.png)
 ![MockupLEADERBOARD.png](Docs%2FImages%2FMockupLEADERBOARD.png)
-![MockupMENU.png](Docs%2FImages%2FMockupMENU.png)
+![MockupGAME.png](Docs%2FImages%2FMockupGAME.png)
 
 # Design patterns escolhidos
 
@@ -43,4 +43,4 @@ de o jogador tem como objetivo passar pela maior quantidade de obstáculos que c
 
 # Diagrama UML
 
-![MockupLEADERBOARD.png](Docs%2FImages%2FMockupLEADERBOARD.png)
+![FlappyBirdLanternaUML.png](Docs%2FImages%2FFlappyBirdLanternaUML.png)
