@@ -1,11 +1,10 @@
 # Descrição
-O jogo é inspirado no famoso jogo “Flappy Bird”. On
-de o jogador tem como objetivo passar pela maior quantidade de obstáculos que conseguir e obter pontos pelo caminho. A dificuldade do jogo cresce à medida que o jogador soma pontos, pois a velocidade aumenta. O jogo não possui final, acabando apenas quando o jogador colide com um dos obstáculos durante o caminho.
+O jogo é inspirado no famoso jogo “Flappy Bird”. Onde o jogador tem como objetivo passar pela maior quantidade de obstáculos que conseguir e obter pontos pelo caminho. A dificuldade do jogo cresce à medida que o jogador soma pontos, pois a velocidade aumenta. O jogo não possui final, acabando apenas quando o jogador colide com um dos obstáculos durante o caminho.
 
 # Lista de features
 
 - Menu - Quando o jogo começa, a tela mostra o menu inicial onde jogador pode iniciar o jogo ou acessar o placar de classificação.
-- Controle do jogador - Ao pressionar a barra de espaço, o jogador pula
+- Controle do jogador - Barra de espaço = jump, R = restart, ESC = close the game
 - Pássaro - O jogador
 - Velocidade do jogo - Quando o usuário passa por um obstáculo, a velocidade do jogo cresce
 - Movimentação dos canos - O canos move-se para a esquerda
