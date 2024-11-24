@@ -9,6 +9,8 @@ public class Bird {
         this.initialY = initialY;
     }
 
+    public void setY(int y){ this.y = y; }
+
     public int getY() {
         return y;
     }
@@ -24,4 +26,5 @@ public class Bird {
     public void applyGravity() {
         this.y++; // movimento para baixo
     }
+
 }

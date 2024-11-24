@@ -18,6 +18,8 @@ public class Pipe {
         return x;
     }
 
+    public int setX(int x) { return this.x = x; }
+
     public int getGapStart() {
         return gapStart;
     }

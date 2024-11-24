@@ -14,6 +14,8 @@ class PipeTest {
         assertFalse(pipe.isScored());
     }
 
+
+
     @Test
     void testMoveLeft() {
         Pipe pipe = new Pipe(80, 10, 12);

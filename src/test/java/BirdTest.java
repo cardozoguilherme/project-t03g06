@@ -36,4 +36,10 @@ class BirdTest {
         bird.applyGravity();
         Assertions.assertEquals(11, bird.getY());
     }
+
+    @Test
+    public void TestSetY(){
+        bird.setY(18);
+        Assertions.assertEquals(18,bird.getY());
+    }
 }
