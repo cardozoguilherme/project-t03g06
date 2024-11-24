@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Random;
 
 public class GameState {
-    private static final int WIDTH = 80;
+    public static final int WIDTH = 80;
     private static final int HEIGHT = 40;
-    private static final int PIPE_WIDTH = 5;
+    public static final int PIPE_WIDTH = 5;
     private static final int PIPE_GAP = 12;
     private static final int PIPE_DISTANCE = 10;
     private static final int MARGIN = 4; // controla a distância minima do gap para o chão/teto

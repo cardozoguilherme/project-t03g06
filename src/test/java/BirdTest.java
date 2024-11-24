@@ -1,4 +1,4 @@
-package com.t03g06.model;
+import com.t03g06.model.Bird;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,27 +14,26 @@ class BirdTest {
     }
 
     @Test
-    public void getY() {
+    public void testGetY() {
         Assertions.assertEquals(10, bird.getY());
     }
 
     @Test
-    public void Reset() {
+    public void testReset() {
         bird.jump();
         bird.reset();
         Assertions.assertEquals(10, bird.getY());
     }
 
     @Test
-    public void Jump() {
+    public void testJump() {
         bird.jump();
         Assertions.assertEquals(7, bird.getY());
     }
 
     @Test
-    public void ApplyGravity() {
+    public void testApplyGravity() {
         bird.applyGravity();
         Assertions.assertEquals(11, bird.getY());
     }
-
 }

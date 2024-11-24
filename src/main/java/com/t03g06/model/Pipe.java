@@ -1,5 +1,7 @@
 package com.t03g06.model;
 
+import static com.t03g06.model.GameState.PIPE_WIDTH;
+
 public class Pipe {
     private int x; // posição horizontal do cano
     private final int gapStart; // início do e
@@ -37,7 +39,7 @@ public class Pipe {
     }
 
     public boolean isOutOfScreen(int screenWidth) {
-        return x + screenWidth < 0; // verifica se o cano saiu da tela
+        return x + PIPE_WIDTH < 0; // verifica se o cano saiu da tela
     }
 }
 
