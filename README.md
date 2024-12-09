@@ -16,12 +16,12 @@ O jogo é inspirado no famoso jogo “Flappy Bird”. Onde o jogador tem como ob
 - Tabela de classificação - Exibe a lista de jogadores com maiores pontuações
 
 # Progresso de implementação das features
-- Menu - não implementado
+- Menu - implementado
 - Controle do jogador - implementado
 - Pássaro - implementado
 - Velocidade do jogo - não implementado
 - Movimentação dos canos - implementado
-- Randomização do tamanho dos canos - não implementado
+- Randomização do tamanho dos canos - implementado
 - Moedas - não implementado
 - Pontuação - implementado
 - Música - não implementado
