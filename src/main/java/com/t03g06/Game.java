@@ -1,4 +1,4 @@
-package com.t03g06.model;
+package com.t03g06;
 
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.screen.Screen;
@@ -8,6 +8,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
 import com.t03g06.controller.GameController;
+import com.t03g06.model.GameState;
 import com.t03g06.view.GameView;
 
 import java.awt.*;
@@ -16,11 +17,11 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-public class FlappyBirdLanterna {
+public class Game {
     public static void main(String[] args) {
         try {
             // personaliza a fonte
-            URL resource = FlappyBirdLanterna.class.getClassLoader().getResource("square.ttf");
+            URL resource = Game.class.getClassLoader().getResource("square.ttf");
             assert resource != null;
             File fontFile = new File(resource.toURI());
             Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);

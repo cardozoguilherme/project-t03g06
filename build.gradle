@@ -21,5 +21,5 @@ test {
 }
 
 application {
-    mainClass.set("com.t03g06.model.FlappyBirdLanterna")
+    mainClass.set("com.t03g06.Game")
 }
