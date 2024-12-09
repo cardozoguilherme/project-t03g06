@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class GameState {
-    public static final int WIDTH = 80;
-    private static final int HEIGHT = 40;
-    public static final int PIPE_WIDTH = 5;
-    private static final int PIPE_GAP = 12;
-    private static final int PIPE_DISTANCE = 10;
-    private static final int MARGIN = 4; // controla a distância minima do gap para o chão/teto
+public class GameModel {
+    public static final int WIDTH = 80; // largura da janela
+    public static final int HEIGHT = 40; // altura da janela
+    public static final int PIPE_WIDTH = 5; // largura do pipe
+    public static final int PIPE_GAP = 12; // espaço onde o bird passa
+    public static final int PIPE_DISTANCE = 10; // distância dos canos na horizontal
+    public static final int MARGIN = 4; // controla a distância minima do gap para o chão/teto
+    public static final int GRAVITY = 1; // gravidade, move bird para baixo
+    public static final int JUMP_HEIGHT = 3; // altura do pulo do bird
+    public static final int PIPES_COUNT = 10; // quantidade de pipes que iniciam no jogo
 
     private final Bird bird;
     private final List<Pipe> pipes;
@@ -19,19 +22,11 @@ public class GameState {
     private boolean gameOver = false;
     private boolean started = false;
 
-    public GameState() {
-        bird = new Bird(HEIGHT / 2); // altura do bird é metade da altura
+    public GameModel() {
+        bird = new Bird(HEIGHT / 2); // altura do bird é metade da altura da janela
         pipes = new ArrayList<>();
         random = new Random();
         resetGame();
-    }
-
-    public static int getHeight() {
-        return HEIGHT;
-    }
-
-    public static int getPipeWidth() {
-        return PIPE_WIDTH;
     }
 
     public Bird getBird() {
@@ -58,8 +53,8 @@ public class GameState {
         pipes.clear(); // esvazia a lista
 
         // inicializa os 10 primeiros canos
-        for (int i = 0; i < 10; i++) {
-            addPipe(WIDTH + i * (PIPE_WIDTH + PIPE_DISTANCE));
+        for (int i = 0; i < PIPES_COUNT; i++) {
+            addPipe(WIDTH / 2 + i * (PIPE_WIDTH + PIPE_DISTANCE));
         }
     }
 
@@ -93,30 +88,36 @@ public class GameState {
         }
 
         // remove canos que estão fora da tela e adiciona novos
-        if (!pipes.isEmpty() && pipes.getFirst().isOutOfScreen(WIDTH)) {
+        if (!pipes.isEmpty() && pipes.getFirst().isOutOfScreen()) {
             pipes.removeFirst();
             addNewPipe();
         }
 
-        bird.applyGravity();
+        bird.applyGravity(GRAVITY);
+        checkCollision();
+    }
+
+    private void checkCollision() {
+        int birdX = WIDTH / 4;
+        int birdY = bird.getY();
 
         // checa colisão do bird com pipe
         for (Pipe pipe : pipes) {
-            if (WIDTH / 4 >= pipe.getX() && WIDTH / 4 < pipe.getX() + PIPE_WIDTH) {
-                if (bird.getY() < pipe.getGapStart() || bird.getY() >= pipe.getGapStart() + PIPE_GAP) {
+            if (birdX >= pipe.getX() && birdX <= pipe.getX() + PIPE_WIDTH) {
+                if (birdY < pipe.getGapStart() || birdY >= pipe.getGapStart() + pipe.getGapSize()) {
                     gameOver = true;
                 }
             }
         }
 
         // checa colisão do bird com o chão ou teto
-        if (bird.getY() < 0 || bird.getY() >= HEIGHT) {
+        if (birdY < 0 || birdY >= HEIGHT) {
             gameOver = true;
         }
     }
 
     public void jumpBird() {
         started = true;
-        bird.jump();
+        bird.jump(JUMP_HEIGHT);
     }
 }

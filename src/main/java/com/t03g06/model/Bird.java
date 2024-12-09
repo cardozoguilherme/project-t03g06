@@ -1,8 +1,8 @@
 package com.t03g06.model;
 
 public class Bird {
-    private int y; // posição vertical do pássaro
-    private final int initialY; // posição inicial do pássaro
+    private int y; // posição vertical do bird
+    private final int initialY; // posição inicial do bird
 
     public Bird(int initialY) {
         this.y = initialY;
@@ -19,12 +19,12 @@ public class Bird {
         this.y = initialY;
     }
 
-    public void jump() {
-        this.y -= 3; // movimento para cima
+    public void jump(int jumpHeight) {
+        this.y -= jumpHeight; // movimento para cima
     }
 
-    public void applyGravity() {
-        this.y++; // movimento para baixo
+    public void applyGravity(int gravity) {
+        this.y+=gravity; // movimento para baixo
     }
 
 }

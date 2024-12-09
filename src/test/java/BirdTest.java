@@ -1,5 +1,6 @@
 import com.t03g06.model.Bird;
 
+import com.t03g06.model.GameModel;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,20 +21,20 @@ class BirdTest {
 
     @Test
     public void testReset() {
-        bird.jump();
+        bird.jump(GameModel.JUMP_HEIGHT);
         bird.reset();
         Assertions.assertEquals(10, bird.getY());
     }
 
     @Test
     public void testJump() {
-        bird.jump();
+        bird.jump(GameModel.JUMP_HEIGHT);
         Assertions.assertEquals(7, bird.getY());
     }
 
     @Test
     public void testApplyGravity() {
-        bird.applyGravity();
+        bird.applyGravity(GameModel.GRAVITY);
         Assertions.assertEquals(11, bird.getY());
     }
 

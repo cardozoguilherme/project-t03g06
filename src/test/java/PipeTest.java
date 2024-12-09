@@ -26,7 +26,7 @@ class PipeTest {
     @Test
     void testIsOutOfScreen() {
         Pipe pipe = new Pipe(-10, 10, 12); // cria pipe fora da tela
-        assertTrue(pipe.isOutOfScreen(80));
+        assertTrue(pipe.isOutOfScreen());
     }
 
     @Test
