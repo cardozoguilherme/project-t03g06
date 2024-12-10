@@ -7,9 +7,11 @@ O jogo é inspirado no famoso jogo “Flappy Bird”. Onde o jogador tem como ob
 - Controle do jogador - Barra de espaço = jump, R = restart, ESC = close the game
 - Pássaro - O jogador
 - Velocidade do jogo - Quando o usuário passa por um obstáculo, a velocidade do jogo cresce
+- Canos - O jogador morre ao colidir com um cano
 - Movimentação dos canos - O canos move-se para a esquerda
 - Randomização do tamanho dos canos - Obstáculos são gerados aleatoriamente  
 - Moedas - Moedas podem ser coletadas entre os obstáculos para incrementar a pontuação do jogador
+- Movimentação das moedas - Moedas movem-se verticalmente e para esquerda
 - Pontuação - A pontuação é incrementada quando o jogador passa um obstáculo ou coleta uma moeda
 - Música - Quando o jogo começa, uma música é tocada
 - Game over - Quando o jogador perde, aparece uma tela de game over com a sua pontuação final
@@ -20,9 +22,11 @@ O jogo é inspirado no famoso jogo “Flappy Bird”. Onde o jogador tem como ob
 - Controle do jogador - implementado
 - Pássaro - implementado
 - Velocidade do jogo - não implementado
+- Canos - implementado
 - Movimentação dos canos - implementado
 - Randomização do tamanho dos canos - implementado
-- Moedas - não implementado
+- Moedas - implementado
+- Movimentação das moedas - implementado
 - Pontuação - implementado
 - Música - não implementado
 - Game over - implementado
