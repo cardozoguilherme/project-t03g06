@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MenuModel {
-    private final List<String> options = Arrays.asList("PLAY", "QUIT"); // opções do menu
+    private final List<String> options = Arrays.asList("PLAY", "LEADERBOARD", "QUIT"); // opções do menu
     private int currentOption = 0; // opção que inicia marcada
 
     public List<String> getOptions() {

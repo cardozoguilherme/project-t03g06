@@ -4,8 +4,10 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.t03g06.Game;
 import com.t03g06.model.GameModel;
+import com.t03g06.model.Leaderboard;
 import com.t03g06.model.MenuModel;
 import com.t03g06.states.PlayingState;
+import com.t03g06.states.LeaderboardState;
 
 import java.io.IOException;
 
@@ -30,7 +32,8 @@ public class MenuController implements Controller {
                 } else if (keyStroke.getKeyType() == KeyType.Enter) {
                     switch (model.getCurrentOption()) {
                         case 0 -> game.setState(new PlayingState(new GameModel(), game.getTextGraphics())); // inicia o jogo com GameModel
-                        case 1 -> System.exit(0); // sai do jogo
+                        case 1 -> game.setState(new LeaderboardState(new Leaderboard(), game.getTextGraphics()));
+                        case 2 -> System.exit(0); // sai do jogo
                     }
                 }
             }
