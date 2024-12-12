@@ -14,25 +14,24 @@ public class LeaderboardViewer implements Viewer {
         this.tg = tg;
     }
 
-
     @Override
     public void draw() {
-        // Cor de fundo e do texto
+        // cor de fundo e do texto
         tg.setBackgroundColor(TextColor.ANSI.BLACK);
         tg.setForegroundColor(TextColor.ANSI.WHITE);
 
-        // Preenche a tela com o caractere de fundo
+        // preenche a tela com o caractere de fundo
         tg.fill(' ');
 
-        // Título do leaderboard
+        // título do leaderboard
         tg.setForegroundColor(TextColor.ANSI.YELLOW);
         tg.putString(35, 2, "LEADERBOARD");
 
-        // Desenha os jogadores e suas pontuações
-        int y = 5;  // Posição inicial para desenhar as pontuações
-        for (var entry : model.getTopScores()) {
+        // desenha as pontuações
+        int y = 5;  // posição inicial para desenhar as pontuações
+        for (int score : model.getTopScores()) {
             tg.setForegroundColor(TextColor.ANSI.WHITE);
-            tg.putString(35, y, entry.getKey() + ": " + entry.getValue());
+            tg.putString(35, y, String.valueOf(score));
             y += 1;
         }
 

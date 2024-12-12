@@ -1,66 +1,55 @@
 package com.t03g06.model.menu;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
+import java.io.*;
+import java.util.*;
 
 public class Leaderboard {
-    private final Map<String, Integer> scores;
-    private final int MAX_SIZE = 5;  // Máximo de 5 jogadores no leaderboard
+    private final List<Integer> scores = new ArrayList<>();
+    private final int MAX_SIZE = 5;  // máximo de 5 jogadores no leaderboard
+    private final String filePath = "src/main/java/com/t03g06/leaderboard/leaderboard.txt";
 
     public Leaderboard() {
-        this.scores = new HashMap<>();
-        this.scores.put("Jogador1", 50);
-        this.scores.put("Jogador2", 25);
-        this.scores.put("Jogador3", 12);
-        this.scores.put("Jogador4", 6);
-        this.scores.put("Jogador5", 3);
+        loadScores();
     }
 
-    public int getMaxSize() {
-        return MAX_SIZE;
-    }
+    private void loadScores() {
+        File file = new File(filePath);
 
-    // Adiciona ou atualiza a pontuação do jogador
-    public void addScore(String playerName, int score) {
-        if (scores.containsKey(playerName)) {
-            // Atualiza a pontuação do jogador existente se for maior
-            scores.put(playerName, Math.max(scores.get(playerName), score));
-        } else {
-            // Verifica se o leaderboard está cheio
-            if (scores.size() < MAX_SIZE) {
-                // Adiciona o jogador diretamente
-                scores.put(playerName, score);
-            } else {
-                // Encontra o jogador com a menor pontuação
-                String lowestScorePlayer = null;
-                int lowestScore = Integer.MAX_VALUE;
-
-                for (Map.Entry<String, Integer> entry : scores.entrySet()) {
-                    if (entry.getValue() < lowestScore) {
-                        lowestScore = entry.getValue();
-                        lowestScorePlayer = entry.getKey();
-                    }
-                }
-
-                // Substitui o jogador com a menor pontuação se a nova pontuação for maior
-                if (score > lowestScore && lowestScorePlayer != null) {
-                    scores.remove(lowestScorePlayer);
-                    scores.put(playerName, score);
-                }
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                scores.add(Integer.parseInt(line.trim()));
             }
+
+            scores.sort(Collections.reverseOrder());
+            if (scores.size() > MAX_SIZE) {
+                scores.subList(MAX_SIZE, scores.size()).clear();
+            }
+        } catch (IOException e) {
+            e.setStackTrace(e.getStackTrace());
         }
     }
 
+    public void saveScores() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            for (int score : scores) {
+                writer.write(score + System.lineSeparator());
+            }
+        } catch (IOException e) {
+            e.setStackTrace(e.getStackTrace());
+        }
+    }
 
+    public List<Integer> getTopScores() {
+        return new ArrayList<>(scores);
+    }
 
-    public List<Map.Entry<String, Integer>> getTopScores() {
-        List<Map.Entry<String, Integer>> scoreList = new ArrayList<>(scores.entrySet());
-        // Ordena as pontuações em ordem decrescente
-        scoreList.sort((a, b) -> b.getValue().compareTo(a.getValue()));
-
-        // Garante que só retorna no máximo 5 jogadores
-        return scoreList.size() > MAX_SIZE ? scoreList.subList(0, MAX_SIZE) : scoreList;
+    public void addScore(int score) {
+        scores.add(score);
+        scores.sort(Collections.reverseOrder());
+        if (scores.size() > MAX_SIZE) {
+            scores.removeLast();
+        }
+        saveScores();
     }
 }

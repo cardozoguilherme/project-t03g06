@@ -9,8 +9,6 @@ import com.t03g06.model.menu.Leaderboard;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Map;
-
 
 public class GameModel {
     public static final int WIDTH = 80; // largura da janela
@@ -44,7 +42,7 @@ public class GameModel {
     private int coinSpeed = 1;
     private long speedModifierEndTime = 0; // tempo em que o modificador expira
     private static final int SPEED_MODIFIER_DURATION = 5000;
-    private Leaderboard leaderboard; // instância do leaderboard
+    private final Leaderboard leaderboard; // instância do leaderboard
 
     public GameModel() {
         bird = new Bird(HEIGHT / 2); // altura do bird é metade da altura da janela
@@ -90,7 +88,6 @@ public class GameModel {
         coinSpeed = 1;
         speedModifierSpeed = 1;
 
-
         // inicializa os 10 primeiros canos
         for (int i = 0; i < PIPES_COUNT; i++) {
             addPipe(WIDTH / 2 + i * (PIPE_WIDTH + PIPE_DISTANCE));
@@ -98,21 +95,10 @@ public class GameModel {
     }
 
     private void gameOver() {
-        // Verifica o leaderboard atual
-        List<Map.Entry<String, Integer>> topScores = leaderboard.getTopScores();
-
-        // Obtém o MAX_SIZE diretamente do leaderboard
-        int maxSize = leaderboard.getMaxSize();
-
-        // Se o jogador tem uma pontuação maior que a 5ª maior pontuação, ele deve ser adicionado ou substituir a menor pontuação
-        if (topScores.size() < maxSize || score > topScores.get(maxSize - 1).getValue()) {
-            leaderboard.addScore("Jogador Atual", score);  // Adiciona ou substitui a pontuação
-        }
-
-        // Marca o jogo como finalizado
         gameOver = true;
+        leaderboard.addScore(score);
+        leaderboard.saveScores();
     }
-
 
     private void addPipe(int x) {
         int gapStart = MARGIN + random.nextInt(HEIGHT - PIPE_GAP - 2 * MARGIN);
