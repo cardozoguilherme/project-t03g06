@@ -4,7 +4,9 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.t03g06.Game;
 import com.t03g06.model.GameModel;
+import com.t03g06.model.menu.MenuModel;
 import com.t03g06.states.GameState;
+import com.t03g06.states.MenuState;
 
 import java.io.IOException;
 
@@ -25,7 +27,9 @@ public class GameOverController implements Controller {
                         game.setState(new GameState(newGameModel, game.getTextGraphics()));
                     }
                 } else if (keyStroke.getKeyType() == KeyType.Escape) {
-                    System.exit(0); // encerra o jogo
+                    System.out.println("Voltando ao menu...");
+                    // Aqui você pode mudar o estado para o menu
+                    game.setState(new MenuState(new MenuModel(), game.getTextGraphics()));
                 }
             }
         } catch (IOException e) {

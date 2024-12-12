@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Comparator;
 
 public class Leaderboard {
     private final Map<String, Integer> scores;
@@ -12,51 +11,56 @@ public class Leaderboard {
 
     public Leaderboard() {
         this.scores = new HashMap<>();
-        this.scores.put("Jogador1", 0);
-        this.scores.put("Jogador2", 0);
-        this.scores.put("Jogador3", 0);
-        this.scores.put("Jogador4", 0);
-        this.scores.put("Jogador5", 0);
+        this.scores.put("Jogador1", 50);
+        this.scores.put("Jogador2", 25);
+        this.scores.put("Jogador3", 12);
+        this.scores.put("Jogador4", 6);
+        this.scores.put("Jogador5", 3);
+    }
+
+    public int getMaxSize() {
+        return MAX_SIZE;
     }
 
     // Adiciona ou atualiza a pontuação do jogador
     public void addScore(String playerName, int score) {
-        // Atualiza a pontuação do jogador
-        scores.put(playerName, scores.getOrDefault(playerName, 0) + score);
+        if (scores.containsKey(playerName)) {
+            // Atualiza a pontuação do jogador existente se for maior
+            scores.put(playerName, Math.max(scores.get(playerName), score));
+        } else {
+            // Verifica se o leaderboard está cheio
+            if (scores.size() < MAX_SIZE) {
+                // Adiciona o jogador diretamente
+                scores.put(playerName, score);
+            } else {
+                // Encontra o jogador com a menor pontuação
+                String lowestScorePlayer = null;
+                int lowestScore = Integer.MAX_VALUE;
 
-        // Ordena os jogadores por pontuação em ordem decrescente
-        List<Map.Entry<String, Integer>> scoreList = new ArrayList<>(scores.entrySet());
-        scoreList.sort((a, b) -> b.getValue().compareTo(a.getValue()));
+                for (Map.Entry<String, Integer> entry : scores.entrySet()) {
+                    if (entry.getValue() < lowestScore) {
+                        lowestScore = entry.getValue();
+                        lowestScorePlayer = entry.getKey();
+                    }
+                }
 
-        // Se o número de jogadores exceder o limite de 5, remove o jogador com a menor pontuação
-        if (scoreList.size() > MAX_SIZE) {
-            Map.Entry<String, Integer> lowestScore = scoreList.get(MAX_SIZE); // jogador com a menor pontuação
-            scores.remove(lowestScore.getKey()); // Remove o jogador com a menor pontuação
+                // Substitui o jogador com a menor pontuação se a nova pontuação for maior
+                if (score > lowestScore && lowestScorePlayer != null) {
+                    scores.remove(lowestScorePlayer);
+                    scores.put(playerName, score);
+                }
+            }
         }
     }
 
-    // Retorna o leaderboard em formato de lista
-    public List<Map.Entry<String, Integer>> getScores() {
+
+
+    public List<Map.Entry<String, Integer>> getTopScores() {
         List<Map.Entry<String, Integer>> scoreList = new ArrayList<>(scores.entrySet());
-        scoreList.sort((a, b) -> b.getValue().compareTo(a.getValue()));  // Ordena pela pontuação
-        return scoreList;
-    }
+        // Ordena as pontuações em ordem decrescente
+        scoreList.sort((a, b) -> b.getValue().compareTo(a.getValue()));
 
-    // Reseta as pontuações
-    public void resetScores() {
-        scores.clear();
-    }
-
-    // Retorna a maior pontuação
-    public int getTopScore() {
-        return scores.values().stream().max(Integer::compareTo).orElse(0);  // Retorna a maior pontuação
-    }
-
-    // Retorna o jogador com a maior pontuação
-    public String getTopPlayer() {
-        return scores.entrySet().stream()
-                .max(Comparator.comparingInt(Map.Entry::getValue))
-                .map(Map.Entry::getKey)
-                .orElse("Nenhum jogador");
+        // Garante que só retorna no máximo 5 jogadores
+        return scoreList.size() > MAX_SIZE ? scoreList.subList(0, MAX_SIZE) : scoreList;
     }
 }

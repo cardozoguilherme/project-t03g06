@@ -14,6 +14,7 @@ public class LeaderboardViewer implements Viewer {
         this.tg = tg;
     }
 
+
     @Override
     public void draw() {
         // Cor de fundo e do texto
@@ -29,7 +30,7 @@ public class LeaderboardViewer implements Viewer {
 
         // Desenha os jogadores e suas pontuações
         int y = 5;  // Posição inicial para desenhar as pontuações
-        for (var entry : model.getScores()) {
+        for (var entry : model.getTopScores()) {
             tg.setForegroundColor(TextColor.ANSI.WHITE);
             tg.putString(35, y, entry.getKey() + ": " + entry.getValue());
             y += 1;

@@ -16,6 +16,6 @@ public class GameOverViewer implements Viewer {
         tg.setForegroundColor(TextColor.ANSI.WHITE);
         tg.putString(35, 10, "GAME OVER");
         tg.putString(30, 12, "Press 'R' to Restart");
-        tg.putString(30, 14, "Press 'Esc' to Exit");
+        tg.putString(30, 14, "Press 'Esc' to return to Menu");
     }
 }
