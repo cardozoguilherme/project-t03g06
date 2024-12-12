@@ -1,3 +1,4 @@
+import com.t03g06.model.GameModel;
 import com.t03g06.model.elements.Pipe;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +20,7 @@ class PipeTest {
     @Test
     void testMoveLeft() {
         Pipe pipe = new Pipe(80, 10, 12);
-        pipe.moveLeft();
+        pipe.moveLeft(1);
         assertEquals(79, pipe.getX());
     }
 
