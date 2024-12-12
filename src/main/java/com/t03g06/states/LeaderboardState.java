@@ -13,7 +13,7 @@ public class LeaderboardState extends State<Leaderboard> {
     }
 
     @Override
-    protected Viewer<Leaderboard> getViewer() {
+    protected Viewer getViewer() {
         return new LeaderboardViewer(getModel(), getTextGraphics());  // Exibe o Leaderboard
     }
 

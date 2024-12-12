@@ -13,7 +13,7 @@ public class   MenuState extends State<MenuModel> {
     }
 
     @Override
-    protected Viewer<MenuModel> getViewer() {
+    protected Viewer getViewer() {
         return new MenuViewer(getModel(), getTextGraphics());
     }
 

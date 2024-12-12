@@ -13,7 +13,7 @@ public class GameOverState extends State<GameModel> {
     }
 
     @Override
-    protected Viewer<GameModel> getViewer() {
+    protected Viewer getViewer() {
         return new GameOverViewer(getTextGraphics());
     }
 

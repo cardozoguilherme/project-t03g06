@@ -24,8 +24,8 @@ public class Pipe {
         return gapSize;
     }
 
-    public void moveLeft() {
-        this.x--;
+    public void moveLeft(int pipeSpeed) {
+        this.x-=pipeSpeed;
     }
 
     public boolean isScored() {

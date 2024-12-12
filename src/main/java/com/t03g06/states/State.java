@@ -25,7 +25,7 @@ public abstract class State<T> {
         return tg;
     }
 
-    protected abstract Viewer<T> getViewer();
+    protected abstract Viewer getViewer();
 
     protected abstract Controller getController();
 

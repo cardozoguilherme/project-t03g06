@@ -13,7 +13,7 @@ public class PlayingState extends State<GameModel> {
     }
 
     @Override
-    protected Viewer<GameModel> getViewer() {
+    protected Viewer getViewer() {
         return new GameViewer(getModel(), getTextGraphics());
     }
 

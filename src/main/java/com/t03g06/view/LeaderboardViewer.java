@@ -4,7 +4,7 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.TextColor;
 import com.t03g06.model.Leaderboard;
 
-public class LeaderboardViewer implements Viewer<Leaderboard> {
+public class LeaderboardViewer implements Viewer {
     private final Leaderboard model;
     private final TextGraphics tg;
 

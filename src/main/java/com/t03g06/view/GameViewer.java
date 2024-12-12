@@ -4,12 +4,13 @@ import com.googlecode.lanterna.TextColor;
 import com.t03g06.model.GameModel;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class GameViewer implements Viewer<GameModel> {
+public class GameViewer implements Viewer {
     private final GameModel model;
     private final TextGraphics tg;
     private final BirdViewer birdViewer;
     private final PipeViewer pipeViewer;
     private final CoinViewer coinViewer;
+    private final SpeedModifierViewer speedModifierViewer;
 
     public GameViewer(GameModel model, TextGraphics tg) {
         this.model = model;
@@ -17,6 +18,7 @@ public class GameViewer implements Viewer<GameModel> {
         this.birdViewer = new BirdViewer(model.getBird(), tg);
         this.pipeViewer = new PipeViewer(model.getPipes(), tg);
         this.coinViewer = new CoinViewer(model.getCoins(), tg);
+        this.speedModifierViewer = new SpeedModifierViewer(model.getSpeedModifiers(), tg);
     }
 
     @Override
@@ -29,6 +31,7 @@ public class GameViewer implements Viewer<GameModel> {
         birdViewer.draw();
         pipeViewer.draw();
         coinViewer.draw();
+        speedModifierViewer.draw();
 
         // desenha o score
         tg.setForegroundColor(TextColor.ANSI.WHITE);

@@ -2,9 +2,8 @@ package com.t03g06.view;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.TextColor;
-import com.t03g06.model.GameModel;
 
-public class GameOverViewer implements Viewer<GameModel> {
+public class GameOverViewer implements Viewer {
     private final TextGraphics tg;
 
     public GameOverViewer(TextGraphics tg) {

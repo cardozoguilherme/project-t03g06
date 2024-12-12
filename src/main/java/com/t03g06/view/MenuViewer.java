@@ -4,7 +4,7 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.t03g06.model.MenuModel;
 
-public class MenuViewer implements Viewer<MenuModel> {
+public class MenuViewer implements Viewer {
     private final MenuModel model;
     private final TextGraphics tg;
 
