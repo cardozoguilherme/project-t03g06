@@ -1,5 +1,10 @@
 package com.t03g06.model;
 
+import com.t03g06.model.elements.Bird;
+import com.t03g06.model.elements.Coin;
+import com.t03g06.model.elements.Pipe;
+import com.t03g06.model.elements.SpeedModifier;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

@@ -1,4 +1,4 @@
-import com.t03g06.model.Pipe;
+import com.t03g06.model.elements.Pipe;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

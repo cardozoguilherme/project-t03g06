@@ -6,7 +6,7 @@ O jogo é inspirado no famoso jogo “Flappy Bird”. Onde o jogador tem como ob
 - Menu - Quando o jogo começa, a tela mostra o menu inicial onde jogador pode iniciar o jogo ou acessar o placar de classificação.
 - Controle do jogador - Barra de espaço = jump, R = restart, ESC = close the game
 - Pássaro - O jogador
-- Velocidade do jogo - Quando o usuário passa por um obstáculo, a velocidade do jogo cresce
+- Modificador de velocidade - Quando o jogador coleta o modificador de velocidade, a velocidade do jogo aumenta por um intervalo de tempo pré-determinado
 - Canos - O jogador morre ao colidir com um cano
 - Movimentação dos canos - O canos move-se para a esquerda
 - Randomização do tamanho dos canos - Obstáculos são gerados aleatoriamente  
@@ -21,7 +21,7 @@ O jogo é inspirado no famoso jogo “Flappy Bird”. Onde o jogador tem como ob
 - Menu - implementado
 - Controle do jogador - implementado
 - Pássaro - implementado
-- Velocidade do jogo - não implementado
+- Modificador de velocidade - implementado
 - Canos - implementado
 - Movimentação dos canos - implementado
 - Randomização do tamanho dos canos - implementado

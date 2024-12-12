@@ -1,4 +1,6 @@
-package com.t03g06.model;
+package com.t03g06.model.elements;
+
+import com.t03g06.model.GameModel;
 
 public class SpeedModifier {
     private int x;

@@ -1,4 +1,4 @@
-package com.t03g06.model;
+package com.t03g06.model.elements;
 
 public class Bird {
     private int y; // posição vertical do bird

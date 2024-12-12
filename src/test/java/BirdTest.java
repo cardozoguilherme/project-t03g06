@@ -1,4 +1,4 @@
-import com.t03g06.model.Bird;
+import com.t03g06.model.elements.Bird;
 
 import com.t03g06.model.GameModel;
 import org.junit.jupiter.api.Assertions;

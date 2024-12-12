@@ -4,7 +4,7 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.t03g06.Game;
 import com.t03g06.model.GameModel;
-import com.t03g06.states.PlayingState;
+import com.t03g06.states.GameState;
 
 import java.io.IOException;
 
@@ -22,7 +22,7 @@ public class GameOverController implements Controller {
                     if (key == 'r' || key == 'R') {
                         // reinicia o jogo
                         GameModel newGameModel = new GameModel();
-                        game.setState(new PlayingState(newGameModel, game.getTextGraphics()));
+                        game.setState(new GameState(newGameModel, game.getTextGraphics()));
                     }
                 } else if (keyStroke.getKeyType() == KeyType.Escape) {
                     System.exit(0); // encerra o jogo

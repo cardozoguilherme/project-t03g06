@@ -1,7 +1,7 @@
-package com.t03g06.view;
+package com.t03g06.view.elements;
 
 import com.t03g06.model.GameModel;
-import com.t03g06.model.Pipe;
+import com.t03g06.model.elements.Pipe;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 

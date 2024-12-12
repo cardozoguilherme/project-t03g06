@@ -1,4 +1,4 @@
-package com.t03g06.model;
+package com.t03g06.model.menu;
 
 import java.util.List;
 import java.util.ArrayList;

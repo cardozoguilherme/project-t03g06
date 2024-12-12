@@ -5,14 +5,14 @@ import com.googlecode.lanterna.input.KeyType;
 import com.t03g06.Game;
 import com.t03g06.model.GameModel;
 import com.t03g06.states.GameOverState;
-import com.t03g06.states.PlayingState;
+import com.t03g06.states.GameState;
 
 import java.io.IOException;
 
-public class PlayingController implements Controller {
+public class GameController implements Controller {
     private final GameModel model;
 
-    public PlayingController(GameModel model) {
+    public GameController(GameModel model) {
         this.model = model;
     }
 
@@ -36,7 +36,7 @@ public class PlayingController implements Controller {
                     } else if (key == 'r' || key == 'R') {
                         // reinicia o jogo
                         GameModel newGameModel = new GameModel();
-                        game.setState(new PlayingState(newGameModel, game.getTextGraphics()));
+                        game.setState(new GameState(newGameModel, game.getTextGraphics()));
                         return; // sai do método após reiniciar
                     }
                 } else if (keyStroke.getKeyType() == KeyType.Escape) {

@@ -1,8 +1,9 @@
-package com.t03g06.view;
+package com.t03g06.view.menu;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.TextColor;
-import com.t03g06.model.Leaderboard;
+import com.t03g06.model.menu.Leaderboard;
+import com.t03g06.view.Viewer;
 
 public class LeaderboardViewer implements Viewer {
     private final Leaderboard model;

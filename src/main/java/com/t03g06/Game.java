@@ -9,7 +9,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
-import com.t03g06.model.MenuModel;
+import com.t03g06.model.menu.MenuModel;
 import com.t03g06.states.MenuState;
 import com.t03g06.states.State;
 

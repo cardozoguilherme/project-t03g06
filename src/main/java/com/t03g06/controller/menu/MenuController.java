@@ -1,12 +1,13 @@
-package com.t03g06.controller;
+package com.t03g06.controller.menu;
 
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.t03g06.Game;
+import com.t03g06.controller.Controller;
 import com.t03g06.model.GameModel;
-import com.t03g06.model.Leaderboard;
-import com.t03g06.model.MenuModel;
-import com.t03g06.states.PlayingState;
+import com.t03g06.model.menu.Leaderboard;
+import com.t03g06.model.menu.MenuModel;
+import com.t03g06.states.GameState;
 import com.t03g06.states.LeaderboardState;
 
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class MenuController implements Controller {
                     model.previousOption(); // move para a opção anterior
                 } else if (keyStroke.getKeyType() == KeyType.Enter) {
                     switch (model.getCurrentOption()) {
-                        case 0 -> game.setState(new PlayingState(new GameModel(), game.getTextGraphics())); // inicia o jogo com GameModel
+                        case 0 -> game.setState(new GameState(new GameModel(), game.getTextGraphics())); // inicia o jogo com GameModel
                         case 1 -> game.setState(new LeaderboardState(new Leaderboard(), game.getTextGraphics()));
                         case 2 -> System.exit(0); // sai do jogo
                     }
