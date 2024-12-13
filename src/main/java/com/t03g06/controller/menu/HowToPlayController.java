@@ -1,17 +1,17 @@
 package com.t03g06.controller.menu;
 
-import com.t03g06.Game;
-import com.t03g06.controller.Controller;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
+import com.t03g06.Game;
+import com.t03g06.controller.Controller;
 import com.t03g06.model.menu.MenuModel;
 import com.t03g06.states.MenuState;
 
 import java.io.IOException;
 
-public class LeaderboardController implements Controller {
+public class HowToPlayController implements Controller {
 
-    public LeaderboardController() {
+    public HowToPlayController() {
     }
 
     @Override

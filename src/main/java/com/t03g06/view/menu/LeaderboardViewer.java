@@ -35,5 +35,7 @@ public class LeaderboardViewer implements Viewer {
             y += 1;
         }
 
+        tg.setForegroundColor(TextColor.ANSI.YELLOW);
+        tg.putString(25, y+=2, "Press ESC to return to the menu.");
     }
 }
