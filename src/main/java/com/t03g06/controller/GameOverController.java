@@ -27,8 +27,6 @@ public class GameOverController implements Controller {
                         game.setState(new GameState(newGameModel, game.getTextGraphics()));
                     }
                 } else if (keyStroke.getKeyType() == KeyType.Escape) {
-                    System.out.println("Voltando ao menu...");
-                    // Aqui você pode mudar o estado para o menu
                     game.setState(new MenuState(new MenuModel(), game.getTextGraphics()));
                 }
             }
