@@ -13,9 +13,8 @@ O jogo é inspirado no famoso jogo “Flappy Bird”. Onde o jogador tem como ob
 - Moedas - Moedas podem ser coletadas entre os obstáculos para incrementar a pontuação do jogador
 - Movimentação das moedas - Moedas movem-se verticalmente e para esquerda
 - Pontuação - A pontuação é incrementada quando o jogador passa um obstáculo ou coleta uma moeda
-- Música - Quando o jogo começa, uma música é tocada
 - Game over - Quando o jogador perde, aparece uma tela de game over com a sua pontuação final
-- Tabela de classificação - Exibe a lista de jogadores com maiores pontuações
+- Tabela de classificação - Exibe a lista maiores pontuações
 
 # Progresso de implementação das features
 - Menu - implementado
@@ -28,9 +27,8 @@ O jogo é inspirado no famoso jogo “Flappy Bird”. Onde o jogador tem como ob
 - Moedas - implementado
 - Movimentação das moedas - implementado
 - Pontuação - implementado
-- Música - não implementado
 - Game over - implementado
-- Tabela de classificação - não implementado
+- Tabela de classificação - implementado
 
 # Mockups
 
