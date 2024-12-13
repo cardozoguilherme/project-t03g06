@@ -6,10 +6,10 @@ plugins {
 group = 'com.t03g06'
 version = '1.0-SNAPSHOT'
 
-// Alterar em caso de incompatibilidade de versão. A menor versão compátivel é VERSION_14.
-compileJava {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 repositories {
