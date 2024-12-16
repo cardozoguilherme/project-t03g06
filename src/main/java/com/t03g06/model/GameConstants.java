@@ -5,8 +5,8 @@ public class GameConstants {
     public static final int HEIGHT = 40; // altura da janela
     public static final int PIPE_WIDTH = 5; // largura do pipe
     public static final int PIPE_GAP = 12; // espaço onde o bird passa
-    public static final int PIPE_DISTANCE = 4; // distância dos canos na horizontal
-    public static final int MARGIN = 10; // controla a distância minima do gap para o chão/teto
+    public static final int PIPE_DISTANCE = 10; // distância dos canos na horizontal
+    public static final int MARGIN = 4; // controla a distância minima do gap para o chão/teto
     public static final int GRAVITY = 1; // gravidade, move bird para baixo
     public static final int JUMP_HEIGHT = 3; // altura do pulo do bird
     public static final int PIPES_COUNT = 10; // quantidade de pipes que iniciam no jogo
