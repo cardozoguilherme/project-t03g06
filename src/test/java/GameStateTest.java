@@ -16,7 +16,7 @@ class GameStateTest {
     @Test
     void testInitialization() {
         assertNotNull(gameModel.getBird());
-        assertEquals(10, gameModel.getPipes().size()); // inicializa o jogo com 10 canos
+        assertEquals(10, gameModel.getPipeManager().getPipes().size()); // inicializa o jogo com 10 canos
         assertEquals(0, gameModel.getScore());
         assertFalse(gameModel.isGameOver());
     }

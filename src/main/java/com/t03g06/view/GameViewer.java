@@ -20,9 +20,9 @@ public class GameViewer implements Viewer {
         this.model = model;
         this.tg = tg;
         this.birdViewer = new BirdViewer(model.getBird(), tg);
-        this.pipeViewer = new PipeViewer(model.getPipes(), tg);
-        this.coinViewer = new CoinViewer(model.getCoins(), tg);
-        this.speedModifierViewer = new SpeedModifierViewer(model.getSpeedModifiers(), tg);
+        this.coinViewer = new CoinViewer(model.getCoinManager().getCoins(), tg);
+        this.speedModifierViewer = new SpeedModifierViewer(model.getSpeedModifierManager().getSpeedModifiers(), tg);
+        this.pipeViewer = new PipeViewer(model.getPipeManager().getPipes(), tg);
     }
 
     @Override
@@ -33,9 +33,9 @@ public class GameViewer implements Viewer {
 
         // desenha os elementos
         birdViewer.draw();
-        pipeViewer.draw();
         coinViewer.draw();
         speedModifierViewer.draw();
+        pipeViewer.draw();
 
         // desenha o score
         tg.setForegroundColor(TextColor.ANSI.WHITE);
