@@ -1,3 +1,4 @@
+import com.t03g06.model.GameConstants;
 import com.t03g06.model.GameModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,7 +25,7 @@ class GameStateTest {
     void testJumpBird() {
         gameModel.jumpBird();
         assertFalse(gameModel.isGameOver());
-        assertTrue(gameModel.getBird().getY() < GameModel.HEIGHT);
+        assertTrue(gameModel.getBird().getY() < GameConstants.HEIGHT);
     }
 
     @Test
@@ -37,7 +38,7 @@ class GameStateTest {
 //    @Test
 //    void testUpdateGameCollisionWithPipe() {
 //        gameModel.jumpBird();
-//        Pipe pipe = new Pipe(GameModel.getWidth()/4, 10, 5);
+//        Pipe pipe = new Pipe(GameConstants.getWidth()/4, 10, 5);
 //        gameModel.getPipes().clear();
 //        gameModel.getPipes().add(pipe);
 //        gameModel.getBird().setY(3);
@@ -49,7 +50,7 @@ class GameStateTest {
 //    @Test
 //    void testUpdateGameCollisionWithGround() {
 //        gameModel.jumpBird();
-//        while(gameModel.getBird().getY()< GameModel.getHeight()-1){
+//        while(gameModel.getBird().getY()< GameConstants.getHeight()-1){
 //            gameModel.updateGame();
 //        }
 //        gameModel.updateGame();
@@ -60,7 +61,7 @@ class GameStateTest {
     void testUpdateGameCollisionWithCeiling() {
         gameModel.jumpBird();
         while(gameModel.getBird().getY()>0){
-            gameModel.getBird().jump(GameModel.JUMP_HEIGHT);
+            gameModel.getBird().jump(GameConstants.JUMP_HEIGHT);
             gameModel.updateGame();}
         gameModel.updateGame();
         assertTrue(gameModel.isGameOver());
@@ -68,7 +69,7 @@ class GameStateTest {
 
     @Test
     void testUpdateGameWithoutCollision() {
-        gameModel.getBird().applyGravity(GameModel.GRAVITY);
+        gameModel.getBird().applyGravity(GameConstants.GRAVITY);
         gameModel.updateGame();
         assertFalse(gameModel.isGameOver());
     }

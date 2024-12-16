@@ -1,9 +1,9 @@
 package com.t03g06.view.elements;
 
+import com.t03g06.model.GameConstants;
 import com.t03g06.model.elements.Bird;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.t03g06.model.GameModel;
 
 public class BirdViewer {
     private final Bird bird;
@@ -17,7 +17,7 @@ public class BirdViewer {
     public void draw() {
         // desenha o bird
         tg.setForegroundColor(TextColor.ANSI.YELLOW_BRIGHT);
-        tg.putString(GameModel.WIDTH / 4, bird.getY(), "O");
+        tg.putString(GameConstants.WIDTH / 4, bird.getY(), "O");
     }
 }
 

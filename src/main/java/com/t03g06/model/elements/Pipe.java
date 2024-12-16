@@ -1,6 +1,6 @@
 package com.t03g06.model.elements;
 
-import com.t03g06.model.GameModel;
+import com.t03g06.model.GameConstants;
 
 public class Pipe {
     private int x; // posição horizontal do cano
@@ -39,7 +39,7 @@ public class Pipe {
     }
 
     public boolean isOutOfScreen() {
-        return x + GameModel.PIPE_WIDTH < 0; // verifica se o cano saiu da tela
+        return x + GameConstants.PIPE_WIDTH < 0; // verifica se o cano saiu da tela
     }
 }
 

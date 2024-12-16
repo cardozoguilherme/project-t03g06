@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class HowToPlayModel {
-    private List<String> instructions;
+    private final List<String> instructions;
 
     public HowToPlayModel() {
         this.instructions = Arrays.asList(

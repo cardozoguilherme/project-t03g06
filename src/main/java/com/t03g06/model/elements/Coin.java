@@ -1,6 +1,6 @@
 package com.t03g06.model.elements;
 
-import com.t03g06.model.GameModel;
+import com.t03g06.model.GameConstants;
 
 public class Coin {
     private int x;
@@ -26,13 +26,13 @@ public class Coin {
 
     public void moveY(int maxY) {
         if (movingDown) {
-            if (y < maxY - GameModel.COIN_HEIGHT - GameModel.COIN_MARGIN) {
+            if (y < maxY - GameConstants.COIN_HEIGHT - GameConstants.COIN_MARGIN) {
                 y++;
             } else {
                 movingDown = false;
             }
         } else {
-            if (y > GameModel.COIN_MARGIN) {
+            if (y > GameConstants.COIN_MARGIN) {
                 y--;
             } else {
                 movingDown = true;
@@ -41,6 +41,6 @@ public class Coin {
     }
 
     public boolean isOutOfScreen() {
-        return x + GameModel.COIN_WIDTH < 0;
+        return x + GameConstants.COIN_WIDTH < 0;
     }
 }

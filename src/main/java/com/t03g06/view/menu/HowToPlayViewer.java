@@ -31,7 +31,7 @@ public class HowToPlayViewer implements Viewer {
         }
 
         tg.setForegroundColor(TextColor.ANSI.YELLOW);
-        tg.putString(20, y+=2, "Press ESC to return to the menu.");
+        tg.putString(20, y + 2, "Press ESC to return to the menu.");
 
     }
 }

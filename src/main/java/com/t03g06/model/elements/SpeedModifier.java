@@ -1,6 +1,6 @@
 package com.t03g06.model.elements;
 
-import com.t03g06.model.GameModel;
+import com.t03g06.model.GameConstants;
 
 public class SpeedModifier {
     private int x;
@@ -26,13 +26,13 @@ public class SpeedModifier {
 
     public void moveY(int maxY) {
         if (movingDown) {
-            if (y < maxY - GameModel.SPEED_MODIFIER_HEIGHT - GameModel.SPEED_MODIFIER_MARGIN) {
+            if (y < maxY - GameConstants.SPEED_MODIFIER_HEIGHT - GameConstants.SPEED_MODIFIER_MARGIN) {
                 y++;
             } else {
                 movingDown = false;
             }
         } else {
-            if (y > GameModel.SPEED_MODIFIER_HEIGHT) {
+            if (y > GameConstants.SPEED_MODIFIER_HEIGHT) {
                 y--;
             } else {
                 movingDown = true;
@@ -41,6 +41,6 @@ public class SpeedModifier {
     }
 
     public boolean isOutOfScreen() {
-        return x + GameModel.SPEED_MODIFIER_WIDTH < 0;
+        return x + GameConstants.SPEED_MODIFIER_WIDTH < 0;
     }
 }
