@@ -1,4 +1,5 @@
-import com.t03g06.model.GameModel;
+package model.elements;
+
 import com.t03g06.model.elements.Pipe;
 import org.junit.jupiter.api.Test;
 
@@ -14,8 +15,6 @@ class PipeTest {
         assertEquals(12, pipe.getGapSize());
         assertFalse(pipe.isScored());
     }
-
-
 
     @Test
     void testMoveLeft() {

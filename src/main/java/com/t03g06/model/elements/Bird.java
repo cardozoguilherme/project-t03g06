@@ -9,11 +9,11 @@ public class Bird {
         this.initialY = initialY;
     }
 
-    public void setY(int y){ this.y = y; }
-
     public int getY() {
         return y;
     }
+
+    public void setY(int y){ this.y = y; }
 
     public void reset() {
         this.y = initialY;

@@ -1,3 +1,5 @@
+package model.elements;
+
 import com.t03g06.model.elements.Coin;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -39,5 +41,4 @@ class CoinTest {
         coin.moveLeft(coin.getX() + coinWidth + 1);
         assertTrue(coin.isOutOfScreen());
     }
-
 }
