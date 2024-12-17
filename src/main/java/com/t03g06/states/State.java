@@ -30,7 +30,7 @@ public abstract class State<T> {
     protected abstract Controller getController();
 
     public void step(Game game, Screen screen) throws IOException {
-        getController().step(game);
+        getController().processInput(game);
         getViewer().draw();
         screen.refresh();
     }

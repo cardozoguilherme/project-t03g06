@@ -17,7 +17,7 @@ public class GameController implements Controller {
     }
 
     @Override
-    public void step(Game game) {
+    public void processInput(Game game) {
         if (model.isGameOver()) {
             // transição para o estado de Game Over
             game.setState(new GameOverState(model, game.getTextGraphics()));

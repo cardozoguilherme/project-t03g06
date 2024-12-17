@@ -15,7 +15,7 @@ public class HowToPlayController implements Controller {
     }
 
     @Override
-    public void step(Game game) {
+    public void processInput(Game game) {
         try {
             KeyStroke keyStroke = game.getInput();
 

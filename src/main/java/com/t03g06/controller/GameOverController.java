@@ -13,7 +13,7 @@ import java.io.IOException;
 public class GameOverController implements Controller {
 
     @Override
-    public void step(Game game) {
+    public void processInput(Game game) {
         try {
             // captura a entrada do teclado
             KeyStroke keyStroke = game.getInput();
