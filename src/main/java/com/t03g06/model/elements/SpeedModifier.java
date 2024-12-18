@@ -40,6 +40,15 @@ public class SpeedModifier {
         }
     }
 
+    public boolean isMovingDown() {
+        return movingDown;
+    }
+
+    public void setMovingDown(boolean movingDown) {
+        this.movingDown = movingDown;
+    }
+
+
     public boolean isOutOfScreen() {
         return x + GameConstants.SPEED_MODIFIER_WIDTH < 0;
     }
