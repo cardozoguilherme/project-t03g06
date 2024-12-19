@@ -3,7 +3,6 @@ package model.elements;
 import com.t03g06.model.GameConstants;
 import com.t03g06.model.elements.Coin;
 
-import com.t03g06.model.elements.Coin;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

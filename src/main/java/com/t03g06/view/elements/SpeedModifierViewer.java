@@ -23,5 +23,6 @@ public class SpeedModifierViewer {
             tg.putString(speedModifier.getX(), speedModifier.getY() + 1, ">>");
             tg.putString(speedModifier.getX(), speedModifier.getY() + 2, ">>");
         }
+        tg.setForegroundColor(TextColor.ANSI.BLUE);
     }
 }
