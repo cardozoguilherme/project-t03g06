@@ -40,6 +40,14 @@ public class Coin {
         }
     }
 
+    public boolean isMovingDown() {
+        return movingDown;
+    }
+
+    public void setMovingDown(boolean movingDown) {
+        this.movingDown = movingDown;
+    }
+
     public boolean isOutOfScreen() {
         return x + GameConstants.COIN_WIDTH < 0;
     }
