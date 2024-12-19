@@ -28,9 +28,9 @@ public class LeaderboardViewer implements Viewer {
         tg.putString(35, 2, "LEADERBOARD");
 
         // desenha as pontuações
+        tg.setForegroundColor(TextColor.ANSI.WHITE);
         int y = 5;  // posição inicial para desenhar as pontuações
         for (int score : model.getTopScores()) {
-            tg.setForegroundColor(TextColor.ANSI.WHITE);
             tg.putString(35, y, String.valueOf(score));
             y += 1;
         }
