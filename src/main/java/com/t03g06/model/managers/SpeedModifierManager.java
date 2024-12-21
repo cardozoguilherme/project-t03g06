@@ -25,9 +25,7 @@ public class SpeedModifierManager {
         }
 
         // remove speedModifiers que estão fora da tela
-        if (!speedModifiers.isEmpty() && speedModifiers.getFirst().isOutOfScreen()) {
-            speedModifiers.removeFirst();
-        }
+        speedModifiers.removeIf(SpeedModifier::isOutOfScreen);
     }
 
     public List<SpeedModifier> getSpeedModifiers() {
