@@ -21,9 +21,7 @@ public class CoinManager {
         }
 
         // remove coins que estão fora da tela
-        if (!coins.isEmpty() && coins.getFirst().isOutOfScreen()) {
-            coins.removeFirst();
-        }
+        coins.removeIf(Coin::isOutOfScreen);
     }
 
     public void addCoin(int x, int y) {
