@@ -3,3 +3,4 @@
 out/
 build/
 *.iml
+src/main/java/com/t03g06/leaderboard/leaderboard.txt
