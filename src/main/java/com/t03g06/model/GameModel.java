@@ -33,6 +33,18 @@ public class GameModel {
         resetGame();
     }
 
+    public GameModel(Bird bird, CoinManager coinManager, PipeManager pipeManager,
+                     SpeedModifierManager speedModifierManager, CollisionManager collisionManager,
+                     Leaderboard leaderboard) {
+        this.bird = bird;
+        this.coinManager = coinManager;
+        this.pipeManager = pipeManager;
+        this.speedModifierManager = speedModifierManager;
+        this.collisionManager = collisionManager;
+        this.leaderboard = leaderboard;
+        resetGame();
+    }
+
     public Bird getBird() {
         return bird;
     }
