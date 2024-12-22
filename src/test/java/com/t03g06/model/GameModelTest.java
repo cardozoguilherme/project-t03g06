@@ -67,7 +67,7 @@ class GameModelTest {
 
     @Test
     void testGameOverOnCollision() {
-        when(collisionManager.checkPipeCollision(bird, pipeManager.getPipes()))
+        when(collisionManager.checkPipeCollision(eq(bird), anyList()))
                 .thenReturn(true);
 
         model.jumpBird();
@@ -79,7 +79,7 @@ class GameModelTest {
 
     @Test
     void testScoreIncrementOnCoinCollision() {
-        when(collisionManager.checkCoinCollision(bird, coinManager.getCoins()))
+        when(collisionManager.checkCoinCollision(eq(bird), anyList()))
                 .thenReturn(true);
 
         model.jumpBird();

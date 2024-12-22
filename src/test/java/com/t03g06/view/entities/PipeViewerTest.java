@@ -4,7 +4,6 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.t03g06.model.GameConstants;
 import com.t03g06.model.entities.Pipe;
-import com.t03g06.view.entities.PipeViewer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -38,26 +37,37 @@ class PipeViewerTest {
 
     @Test
     void testDraw() {
+        when(pipe1.getX()).thenReturn(5);
+        when(pipe1.getGapStart()).thenReturn(10);
+        when(pipe2.getX()).thenReturn(20);
+        when(pipe2.getGapStart()).thenReturn(15);
+
         pipeViewer.draw();
 
         verify(tg).setBackgroundColor(TextColor.ANSI.GREEN);
 
+        int pipe1X = 5;
+        int pipe1GapStart = 10;
+        int pipe2X = 20;
+        int pipe2GapStart = 15;
+
         for (int y = 0; y < GameConstants.HEIGHT; y++) {
-            if (y < pipe1.getGapStart() || y >= pipe1.getGapStart() + GameConstants.PIPE_GAP) {
+            if (y < pipe1GapStart || y >= pipe1GapStart + GameConstants.PIPE_GAP) {
                 for (int w = 0; w < GameConstants.PIPE_WIDTH; w++) {
-                    verify(tg).putString(pipe1.getX() + w, y, " ");
+                    verify(tg).putString(eq(pipe1X + w), eq(y), eq(" "));
                 }
             }
         }
 
         for (int y = 0; y < GameConstants.HEIGHT; y++) {
-            if (y < pipe2.getGapStart() || y >= pipe2.getGapStart() + GameConstants.PIPE_GAP) {
+            if (y < pipe2GapStart || y >= pipe2GapStart + GameConstants.PIPE_GAP) {
                 for (int w = 0; w < GameConstants.PIPE_WIDTH; w++) {
-                    verify(tg).putString(pipe2.getX() + w, y, " ");
+                    verify(tg).putString(eq(pipe2X + w), eq(y), eq(" "));
                 }
             }
         }
 
         verify(tg).setBackgroundColor(TextColor.ANSI.BLUE);
     }
+
 }

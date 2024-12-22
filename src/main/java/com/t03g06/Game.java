@@ -94,7 +94,8 @@ public class Game {
             // executa o jogo
             game.start();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("An error occurred during the game execution: " + e.getMessage());
+            e.printStackTrace(System.err);
         }
     }
 }

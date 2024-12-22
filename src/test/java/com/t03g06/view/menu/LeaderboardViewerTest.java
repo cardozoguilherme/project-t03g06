@@ -3,11 +3,11 @@ package com.t03g06.view.menu;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.t03g06.model.menu.Leaderboard;
-import com.t03g06.view.menu.LeaderboardViewer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static org.mockito.Mockito.*;
 
@@ -28,6 +28,9 @@ class LeaderboardViewerTest {
 
     @Test
     void testDraw() {
+        List<Integer> mockScores = List.of(100, 90, 80, 70, 60);
+        when(model.getTopScores()).thenReturn(mockScores);
+
         viewer.draw();
 
         verify(tg).setBackgroundColor(TextColor.ANSI.BLACK);
@@ -37,8 +40,8 @@ class LeaderboardViewerTest {
 
         verify(tg, atLeastOnce()).setForegroundColor(TextColor.ANSI.WHITE);
         int y = 5;
-        for (int score : model.getTopScores()) {
-            verify(tg).putString(35, y, String.valueOf(score));
+        for (int score : mockScores) {
+            verify(tg).putString(eq(35), eq(y), eq(String.valueOf(score)));
             y += 1;
         }
 

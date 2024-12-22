@@ -2,6 +2,9 @@ package com.t03g06.model.menu;
 
 import java.io.*;
 import java.util.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Leaderboard {
     private final List<Integer> scores = new ArrayList<>();
@@ -13,9 +16,7 @@ public class Leaderboard {
     }
 
     private void loadScores() {
-        File file = new File(filePath);
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(filePath), StandardCharsets.UTF_8)) {
             String line;
             while ((line = reader.readLine()) != null) {
                 scores.add(Integer.parseInt(line.trim()));
@@ -31,7 +32,7 @@ public class Leaderboard {
     }
 
     public void saveScores() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(filePath), StandardCharsets.UTF_8)) {
             for (int score : scores) {
                 writer.write(score + System.lineSeparator());
             }

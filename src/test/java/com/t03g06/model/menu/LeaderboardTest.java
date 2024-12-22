@@ -2,6 +2,7 @@ package com.t03g06.model.menu;
 
 import org.junit.jupiter.api.*;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.*;
 import com.t03g06.model.menu.Leaderboard;
@@ -21,7 +22,7 @@ public class LeaderboardTest {
 
     @Test
     void testLoadScoresFromFile() throws IOException {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(FILE_PATH), StandardCharsets.UTF_8)) {
             writer.write("100\n");
             writer.write("200\n");
             writer.write("300\n");

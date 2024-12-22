@@ -44,7 +44,8 @@ public class GameController implements Controller {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("An error occurred while processing input: " + e.getMessage());
+            e.printStackTrace(System.err);
         }
 
         // atualiza o estado do jogo
