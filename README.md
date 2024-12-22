@@ -1,47 +1,68 @@
-# Descrição
-O jogo é inspirado no famoso jogo “Flappy Bird”. Onde o jogador tem como objetivo passar pela maior quantidade de obstáculos que conseguir e obter pontos pelo caminho. A dificuldade do jogo cresce à medida que o jogador soma pontos, pois a velocidade aumenta. O jogo não possui final, acabando apenas quando o jogador colide com um dos obstáculos durante o caminho.
+# LDTS_T03_G06 - FLAPPY BIRD
+The game is inspired by the popular "Flappy Bird." Players control Flappy, a bird, with the goal of navigating through as many pipes as possible while collecting points. Points are earned in two ways: passing through pipes awards 1 point, and collecting coins grants 5 points. In addition to pipes and coins, there are modifiers that, when collected, increase the game’s speed for 5 seconds.
 
-# Lista de features
+The game has no predefined end and only concludes when the player collides with an obstacle.
 
-- Menu - Quando o jogo começa, a tela mostra o menu inicial onde jogador pode iniciar o jogo ou acessar o placar de classificação.
-- Controle do jogador - Barra de espaço = jump, R = restart, ESC = close the game
-- Pássaro - O jogador
-- Modificador de velocidade - Quando o jogador coleta o modificador de velocidade, a velocidade do jogo aumenta por um intervalo de tempo pré-determinado
-- Canos - O jogador morre ao colidir com um cano
-- Movimentação dos canos - O canos move-se para a esquerda
-- Randomização do tamanho dos canos - Obstáculos são gerados aleatoriamente  
-- Moedas - Moedas podem ser coletadas entre os obstáculos para incrementar a pontuação do jogador
-- Movimentação das moedas - Moedas movem-se verticalmente e para esquerda
-- Pontuação - A pontuação é incrementada quando o jogador passa um obstáculo ou coleta uma moeda
-- Game over - Quando o jogador perde, aparece uma tela de game over com a sua pontuação final
-- Tabela de classificação - Exibe a lista maiores pontuações
+This project was developed by Guilherme Cardozo de Castro Melo (up202401169@edu.fe.up.pt), Tiago Zou Yin (up202306438@edu.fe.up.pt), and Fernando Oliveira (up201005231@edu.fe.up.pt) for LTDS 2024–2025.
 
-# Progresso de implementação das features
-- Menu - implementado
-- Controle do jogador - implementado
-- Pássaro - implementado
-- Modificador de velocidade - implementado
-- Canos - implementado
-- Movimentação dos canos - implementado
-- Randomização do tamanho dos canos - implementado
-- Moedas - implementado
-- Movimentação das moedas - implementado
-- Pontuação - implementado
-- Game over - implementado
-- Tabela de classificação - implementado
+For a more detailed version of this description click [here](./docs/README.md).
 
-# Mockups
+## Screenshots
 
-![MockupMENU.png](Docs%2FImages%2FMockupMENU.png)
-![MockupLEADERBOARD.png](Docs%2FImages%2FMockupLEADERBOARD.png)
-![MockupGAME.png](Docs%2FImages%2FMockupGAME.png)
+The following screenshots ilustrate the general look of our game, as well as the divergent functionalities:
 
-# Design patterns escolhidos
+### Game preview
 
-- Observer: Permite que objetos atualizem seu status e que objetos dependentes desse sejam notificados (e.g., aumento da pontuação ou colisão com um obstáculo) e atualizados.
-- State: Permite a organização do jogo em diferentes estados. Cada estado tem um comportamento diferente (e.g., started ou gameOver).
-- Strategy: Permite diferentes comportamentos de movimentos ou física, permitindo a alteração fácil do pássaro ou dos canos que se movem.
+<p align="center" justify="center">
+  <img src="docs/gifs/preview.gif"/>
+</p>
+<p align="center">
+  <b><i>Gif 1. Sneak peak into FLAPPY BIRD game</i></b>
+</p>
+<br>
+<br />
 
-# Diagrama UML
+### Menus
 
-![FlappyBirdLanternaUML.png](Docs%2FImages%2FFlappyBirdLanternaUML.png)
+<p align="center" justify="center">
+  <img src="docs/images/screenshots/mainMenu.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 1. Main Menu </i></b>
+</p>  
+
+<br>
+<br />
+
+<p align="center" justify="center">
+  <img src="docs/images/screenshots/instructionsMenu.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 2. Instructions Menu </i></b>  
+</p>  
+
+<br>
+<br />
+
+<p align="center" justify="center">
+  <img src="docs/images/screenshots/leaderboardMenu.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 3. Leaderboard Menu </i></b>
+</p>  
+
+<br>
+<br />
+
+### End Game
+
+<p align="center" justify="center">
+  <img src="docs/images/screenshots/GameOver.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 4. Game Over</i></b>
+</p>
+
+<br>
+<br />
+
