@@ -25,9 +25,9 @@ public abstract class State<T> {
         return tg;
     }
 
-    protected abstract Viewer getViewer();
+    public abstract Viewer getViewer();
 
-    protected abstract Controller getController();
+    public abstract Controller getController();
 
     public void step(Game game, Screen screen) throws IOException {
         getController().processInput(game);

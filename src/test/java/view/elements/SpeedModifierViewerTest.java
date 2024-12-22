@@ -1,7 +1,7 @@
 package view.elements;
 
-import com.t03g06.model.elements.SpeedModifier;
-import com.t03g06.view.elements.SpeedModifierViewer;
+import com.t03g06.model.entities.SpeedModifier;
+import com.t03g06.view.entities.SpeedModifierViewer;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import org.junit.jupiter.api.BeforeEach;

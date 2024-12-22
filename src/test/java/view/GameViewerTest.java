@@ -4,7 +4,7 @@ import com.t03g06.view.GameViewer;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.t03g06.model.GameModel;
-import com.t03g06.model.elements.Bird;
+import com.t03g06.model.entities.Bird;
 import com.t03g06.model.managers.CoinManager;
 import com.t03g06.model.managers.PipeManager;
 import com.t03g06.model.managers.SpeedModifierManager;
@@ -15,14 +15,13 @@ import static org.mockito.Mockito.*;
 
 class GameViewerTest {
 
-    private GameModel model;
     private TextGraphics tg;
     private GameViewer gameViewer;
 
     @BeforeEach
     void setUp() {
         // Mocks para o modelo e suas dependências
-        model = mock(GameModel.class);
+        GameModel model = mock(GameModel.class);
         tg = mock(TextGraphics.class);
 
         Bird bird = mock(Bird.class);

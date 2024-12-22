@@ -14,12 +14,12 @@ public class LeaderboardState extends State<Leaderboard> {
     }
 
     @Override
-    protected Viewer getViewer() {
+    public Viewer getViewer() {
         return new LeaderboardViewer(getModel(), getTextGraphics());
     }
 
     @Override
-    protected Controller getController() {
+    public Controller getController() {
             return new LeaderboardController();
     }
 }

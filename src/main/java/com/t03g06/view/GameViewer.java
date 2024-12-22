@@ -3,10 +3,10 @@ package com.t03g06.view;
 import com.googlecode.lanterna.TextColor;
 import com.t03g06.model.GameModel;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.t03g06.view.elements.BirdViewer;
-import com.t03g06.view.elements.CoinViewer;
-import com.t03g06.view.elements.PipeViewer;
-import com.t03g06.view.elements.SpeedModifierViewer;
+import com.t03g06.view.entities.BirdViewer;
+import com.t03g06.view.entities.CoinViewer;
+import com.t03g06.view.entities.PipeViewer;
+import com.t03g06.view.entities.SpeedModifierViewer;
 
 public class GameViewer implements Viewer {
     private final GameModel model;

@@ -1,10 +1,10 @@
 package com.t03g06.model.managers;
 
 import com.t03g06.model.GameConstants;
-import com.t03g06.model.elements.Bird;
-import com.t03g06.model.elements.Coin;
-import com.t03g06.model.elements.Pipe;
-import com.t03g06.model.elements.SpeedModifier;
+import com.t03g06.model.entities.Bird;
+import com.t03g06.model.entities.Coin;
+import com.t03g06.model.entities.Pipe;
+import com.t03g06.model.entities.SpeedModifier;
 
 import java.util.List;
 

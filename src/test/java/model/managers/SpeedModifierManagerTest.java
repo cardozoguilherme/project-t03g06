@@ -3,7 +3,7 @@ package model.managers;
 import com.t03g06.model.managers.SpeedModifierManager;
 
 import com.t03g06.model.GameConstants;
-import com.t03g06.model.elements.SpeedModifier;
+import com.t03g06.model.entities.SpeedModifier;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -38,8 +38,8 @@ class SpeedModifierManagerTest {
         List<SpeedModifier> speedModifiers = speedModifierManager.getSpeedModifiers();
 
         assertEquals(1, speedModifiers.size());
-        assertEquals(100, speedModifiers.get(0).getX());
-        assertEquals(200, speedModifiers.get(0).getY());
+        assertEquals(100, speedModifiers.getFirst().getX());
+        assertEquals(200, speedModifiers.getFirst().getY());
     }
 
     @Test
@@ -71,6 +71,6 @@ class SpeedModifierManagerTest {
         List<SpeedModifier> speedModifiers = speedModifierManager.getSpeedModifiers();
 
         assertEquals(1, speedModifiers.size());
-        assertSame(smMock1, speedModifiers.get(0));
+        assertSame(smMock1, speedModifiers.getFirst());
     }
 }

@@ -13,12 +13,12 @@ public class GameState extends State<GameModel> {
     }
 
     @Override
-    protected Viewer getViewer() {
+    public Viewer getViewer() {
         return new GameViewer(getModel(), getTextGraphics());
     }
 
     @Override
-    protected Controller getController() {
+    public Controller getController() {
         return new GameController(getModel());
     }
 }

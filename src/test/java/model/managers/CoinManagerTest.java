@@ -3,7 +3,7 @@ package model.managers;
 import com.t03g06.model.managers.CoinManager;
 
 import com.t03g06.model.GameConstants;
-import com.t03g06.model.elements.Coin;
+import com.t03g06.model.entities.Coin;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -74,7 +74,7 @@ class CoinManagerTest {
         List<Coin> coins = coinManager.getCoins();
 
         assertEquals(1, coins.size());
-        assertSame(coinMock1, coins.get(0));
+        assertSame(coinMock1, coins.getFirst());
     }
 
 }

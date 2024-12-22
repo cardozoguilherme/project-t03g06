@@ -2,8 +2,8 @@ package view.elements;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.TextColor;
-import com.t03g06.model.elements.Bird;
-import com.t03g06.view.elements.BirdViewer;
+import com.t03g06.model.entities.Bird;
+import com.t03g06.view.entities.BirdViewer;
 import com.t03g06.model.GameConstants;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

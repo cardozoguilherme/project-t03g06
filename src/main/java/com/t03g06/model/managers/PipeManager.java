@@ -1,8 +1,7 @@
 package com.t03g06.model.managers;
 
 import com.t03g06.model.GameConstants;
-import com.t03g06.model.elements.Coin;
-import com.t03g06.model.elements.Pipe;
+import com.t03g06.model.entities.Pipe;
 
 import java.util.ArrayList;
 import java.util.List;

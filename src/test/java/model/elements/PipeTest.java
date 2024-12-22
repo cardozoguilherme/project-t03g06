@@ -1,6 +1,6 @@
 package model.elements;
 
-import com.t03g06.model.elements.Pipe;
+import com.t03g06.model.entities.Pipe;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

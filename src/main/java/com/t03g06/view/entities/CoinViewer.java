@@ -1,6 +1,6 @@
-package com.t03g06.view.elements;
+package com.t03g06.view.entities;
 
-import com.t03g06.model.elements.Coin;
+import com.t03g06.model.entities.Coin;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 

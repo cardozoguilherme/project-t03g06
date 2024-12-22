@@ -13,12 +13,12 @@ public class HowToPlayState extends State<HowToPlayModel> {
     }
 
     @Override
-    protected Viewer getViewer() {
+    public Viewer getViewer() {
         return new HowToPlayViewer(getModel(), getTextGraphics());
     }
 
     @Override
-    protected Controller getController() {
+    public Controller getController() {
         return new HowToPlayController();
     }
 }

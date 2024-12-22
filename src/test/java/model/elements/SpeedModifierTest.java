@@ -1,6 +1,6 @@
 package model.elements;
 
-import com.t03g06.model.elements.SpeedModifier;
+import com.t03g06.model.entities.SpeedModifier;
 import com.t03g06.model.GameConstants;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

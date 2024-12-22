@@ -1,15 +1,11 @@
 package com.t03g06.model;
 
-import com.t03g06.model.elements.Bird;
+import com.t03g06.model.entities.Bird;
 import com.t03g06.model.managers.CollisionManager;
 import com.t03g06.model.managers.CoinManager;
 import com.t03g06.model.managers.PipeManager;
 import com.t03g06.model.managers.SpeedModifierManager;
 import com.t03g06.model.menu.Leaderboard;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 public class GameModel {
     private final Bird bird;

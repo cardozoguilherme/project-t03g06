@@ -1,7 +1,7 @@
 package view.elements;
 
-import com.t03g06.model.elements.Coin;
-import com.t03g06.view.elements.CoinViewer;
+import com.t03g06.model.entities.Coin;
+import com.t03g06.view.entities.CoinViewer;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import org.junit.jupiter.api.BeforeEach;

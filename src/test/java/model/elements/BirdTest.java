@@ -1,7 +1,7 @@
 package model.elements;
 
 import com.t03g06.model.GameConstants;
-import com.t03g06.model.elements.Bird;
+import com.t03g06.model.entities.Bird;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

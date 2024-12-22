@@ -3,8 +3,8 @@ package view.elements;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.t03g06.model.GameConstants;
-import com.t03g06.model.elements.Pipe;
-import com.t03g06.view.elements.PipeViewer;
+import com.t03g06.model.entities.Pipe;
+import com.t03g06.view.entities.PipeViewer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

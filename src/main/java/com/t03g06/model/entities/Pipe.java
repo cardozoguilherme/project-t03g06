@@ -1,4 +1,4 @@
-package com.t03g06.model.elements;
+package com.t03g06.model.entities;
 
 import com.t03g06.model.GameConstants;
 

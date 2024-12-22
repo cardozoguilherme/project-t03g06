@@ -13,12 +13,12 @@ public class GameOverState extends State<GameModel> {
     }
 
     @Override
-    protected Viewer getViewer() {
+    public Viewer getViewer() {
         return new GameOverViewer(getTextGraphics());
     }
 
     @Override
-    protected Controller getController() {
+    public Controller getController() {
         return new GameOverController();
     }
 }

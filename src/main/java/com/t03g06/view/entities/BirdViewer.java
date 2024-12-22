@@ -1,7 +1,7 @@
-package com.t03g06.view.elements;
+package com.t03g06.view.entities;
 
 import com.t03g06.model.GameConstants;
-import com.t03g06.model.elements.Bird;
+import com.t03g06.model.entities.Bird;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 

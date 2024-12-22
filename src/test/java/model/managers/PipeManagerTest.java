@@ -3,13 +3,11 @@ package model.managers;
 import com.t03g06.model.managers.*;
 
 import com.t03g06.model.GameConstants;
-import com.t03g06.model.elements.Coin;
-import com.t03g06.model.elements.Pipe;
+import com.t03g06.model.entities.Pipe;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -17,13 +15,11 @@ import static org.mockito.Mockito.*;
 class PipeManagerTest {
 
     private PipeManager pipeManager;
-    private CoinManager coinManagerMock;
-    private SpeedModifierManager speedModifierManagerMock;
 
     @BeforeEach
     void setUp() {
-        coinManagerMock = mock(CoinManager.class);
-        speedModifierManagerMock = mock(SpeedModifierManager.class);
+        CoinManager coinManagerMock = mock(CoinManager.class);
+        SpeedModifierManager speedModifierManagerMock = mock(SpeedModifierManager.class);
         pipeManager = new PipeManager(coinManagerMock, speedModifierManagerMock);
     }
 

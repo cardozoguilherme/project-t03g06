@@ -1,7 +1,7 @@
 package model.elements;
 
 import com.t03g06.model.GameConstants;
-import com.t03g06.model.elements.Coin;
+import com.t03g06.model.entities.Coin;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
