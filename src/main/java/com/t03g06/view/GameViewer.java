@@ -25,6 +25,16 @@ public class GameViewer implements Viewer {
         this.pipeViewer = new PipeViewer(model.getPipeManager().getPipes(), tg);
     }
 
+    public GameViewer(GameModel model, TextGraphics tg, BirdViewer birdViewer, CoinViewer coinViewer,
+                      PipeViewer pipeViewer, SpeedModifierViewer speedModifierViewer) {
+        this.model = model;
+        this.tg = tg;
+        this.birdViewer = birdViewer;
+        this.coinViewer = coinViewer;
+        this.pipeViewer = pipeViewer;
+        this.speedModifierViewer = speedModifierViewer;
+    }
+
     @Override
     public void draw() {
         // desenha o fundo
