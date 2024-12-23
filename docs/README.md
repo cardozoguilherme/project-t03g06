@@ -15,6 +15,7 @@ This project was developed by Guilherme Cardozo de Castro Melo (up202401169@edu.
 - **Player Controls Menu** - Arrow UP = previous option, Arrow DOWN = next option, ESC = return to the main menu.
 - **Bird** - The character controlled by the player; it can jump and is affected by gravity.
 - **Speed Modifier** - Collecting a speed modifier increases the game speed for 5 seconds.
+- **Speed Modifier Movement** - Speed modifiers move vertically and to the left.
 - **Pipes** - The player dies upon colliding with a pipe.
 - **Pipe Movement** - Pipes move to the left across the screen.
 - **Randomized Pipe Sizes** - Pipes are randomly generated to vary the challenge.
@@ -23,6 +24,12 @@ This project was developed by Guilherme Cardozo de Castro Melo (up202401169@edu.
 - **Scoring System** - The score increases when the player passes an obstacle or collects a coin.
 - **Game Over** - A game-over screen is displayed when the player loses.
 - **Leaderboard** - Displays a list of the highest scores achieved.
+
+![preview.png](gifs%2Fpreview.gif)
+
+<p align="center">
+  <b><i>Gif 1. This gif shows the player controls ingame, bird, speed modfier, speedmodifiers movement, pipes, pipe movement, randomized pipe sizes, coins, coin movement, scoring system and game over.</i></b>
+</p>
 
 ------
 
@@ -148,6 +155,10 @@ The GameModel class has three key code smells: Long Method, Large Class, and Fea
 [Link to mutation testing report](https://github.com/FEUP-LDTS-2024/project-t03g06/tree/master/docs/tests/report/pitest)
 
 ------
+
+### UML DIAGRAM
+
+![FinalUML.png](images%2Fuml%2FFinalUML.png)
 
 ### SELF-EVALUATION
 
