@@ -1,0 +1,310 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > GameModel</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.t03g06.model</a>
+</div>
+
+<h1>Coverage Summary for Class: GameModel (com.t03g06.model)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GameModel</td>
+<td class="coverageStat">
+  <span class="percent">
+    76.9%
+  </span>
+  <span class="absValue">
+    (10/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    62.5%
+  </span>
+  <span class="absValue">
+    (10/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83.1%
+  </span>
+  <span class="absValue">
+    (54/65)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757</td>
+  </tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757$auxiliary$36t3SJV4</td>
+  </tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757$auxiliary$B0DCMAYd</td>
+  </tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757$auxiliary$e2sR0hXV</td>
+  </tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757$auxiliary$egcvcXWS</td>
+  </tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757$auxiliary$g9FTpOKk</td>
+  </tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757$auxiliary$gfpBtiuY</td>
+  </tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757$auxiliary$oRBZENZc</td>
+  </tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757$auxiliary$p5gvYmIJ</td>
+  </tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757$auxiliary$QD3MrjGL</td>
+  </tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757$auxiliary$rvAjG9W5</td>
+  </tr>
+  <tr>
+    <td class="name">GameModel$MockitoMock$1768455757$auxiliary$Uo4QTUeJ</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    76.9%
+  </span>
+  <span class="absValue">
+    (10/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    62.5%
+  </span>
+  <span class="absValue">
+    (10/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83.1%
+  </span>
+  <span class="absValue">
+    (54/65)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.t03g06.model;
+&nbsp;
+&nbsp;import com.t03g06.model.entities.Bird;
+&nbsp;import com.t03g06.model.managers.CollisionManager;
+&nbsp;import com.t03g06.model.managers.CoinManager;
+&nbsp;import com.t03g06.model.managers.PipeManager;
+&nbsp;import com.t03g06.model.managers.SpeedModifierManager;
+&nbsp;import com.t03g06.model.menu.Leaderboard;
+&nbsp;
+&nbsp;public class GameModel {
+&nbsp;    private final Bird bird;
+&nbsp;    private final CoinManager coinManager;
+&nbsp;    private final SpeedModifierManager speedModifierManager;
+&nbsp;    private final PipeManager pipeManager;
+&nbsp;    private final CollisionManager collisionManager;
+&nbsp;    private final Leaderboard leaderboard; // instância do leaderboard
+&nbsp;
+&nbsp;    private int score;
+<b class="fc">&nbsp;    private boolean gameOver = false;</b>
+<b class="fc">&nbsp;    private boolean started = false;</b>
+<b class="fc">&nbsp;    private int coinSpeed = 1;</b>
+<b class="fc">&nbsp;    private int speedModifierSpeed = 1;</b>
+<b class="fc">&nbsp;    private int pipeSpeed = 1;</b>
+<b class="fc">&nbsp;    private long speedModifierEndTime = 0; // tempo em que o modificador expira</b>
+&nbsp;
+<b class="fc">&nbsp;    public GameModel() {</b>
+<b class="fc">&nbsp;        this.bird = new Bird(GameConstants.HEIGHT / 2); // altura do bird é metade da altura da janela</b>
+<b class="fc">&nbsp;        this.coinManager = new CoinManager();</b>
+<b class="fc">&nbsp;        this.speedModifierManager = new SpeedModifierManager();</b>
+<b class="fc">&nbsp;        this.pipeManager = new PipeManager(coinManager, speedModifierManager);</b>
+<b class="fc">&nbsp;        this.collisionManager = new CollisionManager();</b>
+<b class="fc">&nbsp;        this.leaderboard = new Leaderboard();</b>
+<b class="fc">&nbsp;        resetGame();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public GameModel(Bird bird, CoinManager coinManager, PipeManager pipeManager,
+&nbsp;                     SpeedModifierManager speedModifierManager, CollisionManager collisionManager,
+<b class="fc">&nbsp;                     Leaderboard leaderboard) {</b>
+<b class="fc">&nbsp;        this.bird = bird;</b>
+<b class="fc">&nbsp;        this.coinManager = coinManager;</b>
+<b class="fc">&nbsp;        this.pipeManager = pipeManager;</b>
+<b class="fc">&nbsp;        this.speedModifierManager = speedModifierManager;</b>
+<b class="fc">&nbsp;        this.collisionManager = collisionManager;</b>
+<b class="fc">&nbsp;        this.leaderboard = leaderboard;</b>
+<b class="fc">&nbsp;        resetGame();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Bird getBird() {
+<b class="fc">&nbsp;        return bird;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public PipeManager getPipeManager() {
+<b class="nc">&nbsp;        return pipeManager;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public CoinManager getCoinManager() {
+<b class="nc">&nbsp;        return coinManager;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public SpeedModifierManager getSpeedModifierManager() {
+<b class="nc">&nbsp;        return speedModifierManager;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getScore() {
+<b class="fc">&nbsp;        return score;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean isGameOver() {
+<b class="fc">&nbsp;        return gameOver;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void resetGame() {
+<b class="fc">&nbsp;        bird.reset();</b>
+<b class="fc">&nbsp;        score = 0;</b>
+<b class="fc">&nbsp;        gameOver = false;</b>
+<b class="fc">&nbsp;        started = false;</b>
+<b class="fc">&nbsp;        pipeSpeed = 1;</b>
+<b class="fc">&nbsp;        coinSpeed = 1;</b>
+<b class="fc">&nbsp;        speedModifierSpeed = 1;</b>
+<b class="fc">&nbsp;        coinManager.reset();</b>
+<b class="fc">&nbsp;        speedModifierManager.reset();</b>
+<b class="fc">&nbsp;        pipeManager.reset();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private void gameOver() {
+<b class="fc">&nbsp;        gameOver = true;</b>
+<b class="fc">&nbsp;        leaderboard.addScore(score);</b>
+<b class="fc">&nbsp;        leaderboard.saveScores();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void updateGame() {
+&nbsp;        // interrompe caso o jogo não tenha começado ou o jogador perdeu
+<b class="pc">&nbsp;        if (!started || gameOver) return;</b>
+&nbsp;
+&nbsp;        // checa se o modificador de velocidade expirou
+<b class="pc">&nbsp;        if (speedModifierEndTime &gt; 0 &amp;&amp; System.currentTimeMillis() &gt; speedModifierEndTime) {</b>
+<b class="nc">&nbsp;            pipeSpeed = 1;</b>
+<b class="nc">&nbsp;            speedModifierSpeed = 1;</b>
+<b class="nc">&nbsp;            coinSpeed = 1;</b>
+<b class="nc">&nbsp;            speedModifierEndTime = 0;</b>
+&nbsp;        }
+&nbsp;        // move os canos, remove os que estão fora da tela e adiciona novos
+&nbsp;        // a lógica de spawn de coins e speed modifiers é no update de pipeManager
+<b class="fc">&nbsp;        pipeManager.update(pipeSpeed);</b>
+&nbsp;        // move coins em Y e para esquerda, remove os que estão fora da tela
+<b class="fc">&nbsp;        coinManager.update(coinSpeed);</b>
+&nbsp;        // move speedModifiers em Y e para esquerda, remove os que estão fora da tela
+<b class="fc">&nbsp;        speedModifierManager.update(speedModifierSpeed);</b>
+&nbsp;
+&nbsp;        // atualiza o score quando se o bird passou o pipe
+<b class="fc">&nbsp;        score += pipeManager.updateScore();</b>
+&nbsp;
+<b class="fc">&nbsp;        bird.applyGravity(GameConstants.GRAVITY);</b>
+&nbsp;
+<b class="fc">&nbsp;        checkCollisions();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private void checkCollisions() {
+&nbsp;        // se bird colidiu com pipe, teto ou chão, então é game over
+<b class="fc">&nbsp;        if (collisionManager.checkPipeCollision(bird, pipeManager.getPipes()) ||</b>
+<b class="pc">&nbsp;                collisionManager.checkBoundaryCollision(bird)) {</b>
+<b class="fc">&nbsp;            gameOver();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // se bird colidiu com coin, o score é incrementado
+<b class="fc">&nbsp;        if (collisionManager.checkCoinCollision(bird, coinManager.getCoins())) {</b>
+<b class="fc">&nbsp;            score += GameConstants.COIN_SCORE;</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // se bird colidiu com speedModifier, a velocidade do jogo aumenta por um tempo
+<b class="pc">&nbsp;        if (collisionManager.checkSpeedModifierCollision(bird, speedModifierManager.getSpeedModifiers())) {</b>
+<b class="nc">&nbsp;            pipeSpeed = 2;</b>
+<b class="nc">&nbsp;            coinSpeed = 2;</b>
+<b class="nc">&nbsp;            speedModifierSpeed = 2;</b>
+<b class="nc">&nbsp;            speedModifierEndTime = System.currentTimeMillis() + GameConstants.SPEED_MODIFIER_DURATION;</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    public void jumpBird() {
+<b class="fc">&nbsp;        started = true;</b>
+<b class="fc">&nbsp;        bird.jump(GameConstants.JUMP_HEIGHT);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-23 00:52</div>
+</div>
+</body>
+</html>

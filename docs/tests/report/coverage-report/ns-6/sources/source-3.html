@@ -1,0 +1,229 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > PipeManager</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.t03g06.model.managers</a>
+</div>
+
+<h1>Coverage Summary for Class: PipeManager (com.t03g06.model.managers)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PipeManager</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    81.2%
+  </span>
+  <span class="absValue">
+    (13/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (29/29)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">PipeManager$MockitoMock$348765348</td>
+  </tr>
+  <tr>
+    <td class="name">PipeManager$MockitoMock$348765348$auxiliary$0iWZXgbF</td>
+  </tr>
+  <tr>
+    <td class="name">PipeManager$MockitoMock$348765348$auxiliary$DbHD1jri</td>
+  </tr>
+  <tr>
+    <td class="name">PipeManager$MockitoMock$348765348$auxiliary$eidDb4Pq</td>
+  </tr>
+  <tr>
+    <td class="name">PipeManager$MockitoMock$348765348$auxiliary$FLz3fvvd</td>
+  </tr>
+  <tr>
+    <td class="name">PipeManager$MockitoMock$348765348$auxiliary$g0EoayOb</td>
+  </tr>
+  <tr>
+    <td class="name">PipeManager$MockitoMock$348765348$auxiliary$jYogCFBH</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    81.2%
+  </span>
+  <span class="absValue">
+    (13/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (29/29)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.t03g06.model.managers;
+&nbsp;
+&nbsp;import com.t03g06.model.GameConstants;
+&nbsp;import com.t03g06.model.entities.Pipe;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Random;
+&nbsp;
+&nbsp;public class PipeManager {
+<b class="fc">&nbsp;    private final List&lt;Pipe&gt; pipes = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;    private final Random random = new Random();</b>
+&nbsp;    private final CoinManager coinManager;
+&nbsp;    private final SpeedModifierManager speedModifierManager;
+&nbsp;
+<b class="fc">&nbsp;    public PipeManager(CoinManager coinManager, SpeedModifierManager speedModifierManager) {</b>
+<b class="fc">&nbsp;        this.coinManager = coinManager;</b>
+<b class="fc">&nbsp;        this.speedModifierManager = speedModifierManager;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void reset() {
+<b class="fc">&nbsp;        pipes.clear(); // esvazia a lista</b>
+&nbsp;
+&nbsp;        // inicializa os 10 primeiros canos
+<b class="fc">&nbsp;        for (int i = 0; i &lt; GameConstants.PIPES_COUNT; i++) {</b>
+<b class="fc">&nbsp;            int x = GameConstants.WIDTH / 2 + i * (GameConstants.PIPE_WIDTH + GameConstants.PIPE_DISTANCE);</b>
+<b class="fc">&nbsp;            addPipe(x);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    public void update(int pipeSpeed) {
+&nbsp;        // move os canos para a esquerda
+<b class="fc">&nbsp;        for (Pipe pipe : pipes) {</b>
+<b class="fc">&nbsp;            pipe.moveLeft(pipeSpeed);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // remove canos que estão fora da tela e adiciona novos
+<b class="pc">&nbsp;        if (!pipes.isEmpty() &amp;&amp; pipes.getFirst().isOutOfScreen()) {</b>
+<b class="fc">&nbsp;            pipes.removeFirst();</b>
+<b class="fc">&nbsp;            addNewPipe();</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    public int updateScore() {
+<b class="fc">&nbsp;        int score = 0;</b>
+&nbsp;        // verifica se o bird passou o cano
+<b class="fc">&nbsp;        for (Pipe pipe : pipes) {</b>
+<b class="pc">&nbsp;            if (!pipe.isScored() &amp;&amp; (GameConstants.WIDTH / 4) &gt; (pipe.getX() + GameConstants.PIPE_WIDTH)) {</b>
+<b class="fc">&nbsp;                pipe.setScored(true);</b>
+<b class="fc">&nbsp;                score += GameConstants.PIPE_SCORE;</b>
+&nbsp;            }
+&nbsp;        }
+<b class="fc">&nbsp;        return score;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private void addPipe(int x) {
+<b class="fc">&nbsp;        int gapStart = GameConstants.MARGIN + random.nextInt(GameConstants.HEIGHT - GameConstants.PIPE_GAP - 2 * GameConstants.MARGIN);</b>
+<b class="fc">&nbsp;        pipes.add(new Pipe(x, gapStart, GameConstants.PIPE_GAP));</b>
+&nbsp;
+&nbsp;        // 50% de chance de adicionar uma coin ou um speedModifier
+<b class="fc">&nbsp;        int startY = gapStart + GameConstants.PIPE_GAP / 2; // posição y no meio do gap</b>
+<b class="fc">&nbsp;        if (random.nextBoolean()) {</b>
+<b class="fc">&nbsp;            coinManager.addCoin(x + GameConstants.PIPE_WIDTH + GameConstants.PIPE_DISTANCE / 2, startY);</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            speedModifierManager.addModifier(x + GameConstants.PIPE_WIDTH + GameConstants.PIPE_DISTANCE / 2, startY);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private void addNewPipe() {
+<b class="fc">&nbsp;        int lastPipeX = pipes.getLast().getX();</b>
+<b class="fc">&nbsp;        addPipe(lastPipeX + GameConstants.PIPE_WIDTH + GameConstants.PIPE_DISTANCE);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Pipe&gt; getPipes() {
+<b class="fc">&nbsp;        return pipes;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-23 00:52</div>
+</div>
+</body>
+</html>

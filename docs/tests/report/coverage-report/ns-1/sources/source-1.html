@@ -1,0 +1,253 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > Game</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.t03g06</a>
+</div>
+
+<h1>Coverage Summary for Class: Game (com.t03g06)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Game</td>
+<td class="coverageStat">
+  <span class="percent">
+    14.3%
+  </span>
+  <span class="absValue">
+    (1/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    2.5%
+  </span>
+  <span class="absValue">
+    (1/40)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Game$MockitoMock$577032806</td>
+  </tr>
+  <tr>
+    <td class="name">Game$MockitoMock$577032806$auxiliary$3PTXSb8P</td>
+  </tr>
+  <tr>
+    <td class="name">Game$MockitoMock$577032806$auxiliary$3WNzVBO0</td>
+  </tr>
+  <tr>
+    <td class="name">Game$MockitoMock$577032806$auxiliary$BKsZKmCT</td>
+  </tr>
+  <tr>
+    <td class="name">Game$MockitoMock$577032806$auxiliary$L3qBteDO</td>
+  </tr>
+  <tr>
+    <td class="name">Game$MockitoMock$577032806$auxiliary$PsHwllx7</td>
+  </tr>
+  <tr>
+    <td class="name">Game$MockitoMock$577032806$auxiliary$T8istzyp</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    14.3%
+  </span>
+  <span class="absValue">
+    (1/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    2.5%
+  </span>
+  <span class="absValue">
+    (1/40)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.t03g06;
+&nbsp;
+&nbsp;import com.googlecode.lanterna.TerminalSize;
+&nbsp;import com.googlecode.lanterna.graphics.TextGraphics;
+&nbsp;import com.googlecode.lanterna.input.KeyStroke;
+&nbsp;import com.googlecode.lanterna.screen.Screen;
+&nbsp;import com.googlecode.lanterna.screen.TerminalScreen;
+&nbsp;import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
+&nbsp;import com.googlecode.lanterna.terminal.Terminal;
+&nbsp;import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+&nbsp;import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
+&nbsp;import com.t03g06.model.menu.MenuModel;
+&nbsp;import com.t03g06.states.MenuState;
+&nbsp;import com.t03g06.states.State;
+&nbsp;
+&nbsp;import java.awt.*;
+&nbsp;import java.io.File;
+&nbsp;import java.io.IOException;
+&nbsp;import java.net.URL;
+&nbsp;
+<b class="fc">&nbsp;public class Game {</b>
+&nbsp;    private State&lt;?&gt; currentState;
+&nbsp;    private final Screen screen;
+&nbsp;    private final TextGraphics tg;
+&nbsp;
+<b class="nc">&nbsp;    public Game(Screen screen, TextGraphics tg) {</b>
+<b class="nc">&nbsp;        this.screen = screen;</b>
+<b class="nc">&nbsp;        this.tg = tg;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setState(State&lt;?&gt; state) {
+<b class="nc">&nbsp;        this.currentState = state;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public TextGraphics getTextGraphics() {
+<b class="nc">&nbsp;        return tg;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public KeyStroke getInput() throws IOException {
+<b class="nc">&nbsp;        return screen.pollInput();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void start() throws IOException {
+<b class="nc">&nbsp;        int FPS = 10;</b>
+<b class="nc">&nbsp;        int frameTime = 1000 / FPS;</b>
+&nbsp;
+<b class="nc">&nbsp;        System.currentTimeMillis();</b>
+&nbsp;
+&nbsp;        while (true) {
+<b class="nc">&nbsp;            long currentTime = System.currentTimeMillis();</b>
+&nbsp;
+<b class="nc">&nbsp;            currentState.step(this, screen);</b>
+&nbsp;
+<b class="nc">&nbsp;            long sleepTime = frameTime - (System.currentTimeMillis() - currentTime);</b>
+<b class="nc">&nbsp;            if (sleepTime &gt; 0) {</b>
+&nbsp;                try {
+<b class="nc">&nbsp;                    Thread.sleep(sleepTime);</b>
+<b class="nc">&nbsp;                } catch (InterruptedException e) {</b>
+<b class="nc">&nbsp;                    Thread.currentThread().interrupt();</b>
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    public static void main(String[] args) {
+&nbsp;        try {
+&nbsp;            // personaliza a fonte
+<b class="nc">&nbsp;            URL resource = Game.class.getClassLoader().getResource(&quot;square.ttf&quot;);</b>
+<b class="nc">&nbsp;            assert resource != null;</b>
+<b class="nc">&nbsp;            File fontFile = new File(resource.toURI());</b>
+<b class="nc">&nbsp;            Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);</b>
+<b class="nc">&nbsp;            Font loadedFont = font.deriveFont(Font.PLAIN, 16);</b>
+<b class="nc">&nbsp;            AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);</b>
+&nbsp;
+&nbsp;            // configura o terminal
+<b class="nc">&nbsp;            DefaultTerminalFactory factory = new DefaultTerminalFactory();</b>
+<b class="nc">&nbsp;            factory.setTerminalEmulatorFontConfiguration(fontConfig);</b>
+<b class="nc">&nbsp;            factory.setForceAWTOverSwing(true);</b>
+<b class="nc">&nbsp;            factory.setInitialTerminalSize(new TerminalSize(80, 40));</b>
+&nbsp;
+<b class="nc">&nbsp;            Terminal terminal = factory.createTerminal();</b>
+<b class="nc">&nbsp;            ((AWTTerminalFrame) terminal).setTitle(&quot;Flappy Bird&quot;);</b>
+<b class="nc">&nbsp;            Screen screen = new TerminalScreen(terminal);</b>
+<b class="nc">&nbsp;            screen.startScreen();</b>
+<b class="nc">&nbsp;            screen.setCursorPosition(null);</b>
+&nbsp;
+<b class="nc">&nbsp;            TextGraphics tg = screen.newTextGraphics();</b>
+&nbsp;
+&nbsp;            // inicialização do jogo no menu
+<b class="nc">&nbsp;            MenuModel menuModel = new MenuModel();</b>
+<b class="nc">&nbsp;            Game game = new Game(screen, tg);</b>
+<b class="nc">&nbsp;            game.setState(new MenuState(menuModel, tg));</b>
+&nbsp;
+&nbsp;            // executa o jogo
+<b class="nc">&nbsp;            game.start();</b>
+<b class="nc">&nbsp;        } catch (Exception e) {</b>
+<b class="nc">&nbsp;            System.err.println(&quot;An error occurred during the game execution: &quot; + e.getMessage());</b>
+<b class="nc">&nbsp;            e.printStackTrace(System.err);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-23 00:52</div>
+</div>
+</body>
+</html>

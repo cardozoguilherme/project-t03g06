@@ -1,0 +1,146 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > BirdViewer</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.t03g06.view.entities</a>
+</div>
+
+<h1>Coverage Summary for Class: BirdViewer (com.t03g06.view.entities)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BirdViewer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">BirdViewer$MockitoMock$2022560382</td>
+  </tr>
+  <tr>
+    <td class="name">BirdViewer$MockitoMock$2022560382$auxiliary$IDDdH0bX</td>
+  </tr>
+  <tr>
+    <td class="name">BirdViewer$MockitoMock$2022560382$auxiliary$kjkbziUO</td>
+  </tr>
+  <tr>
+    <td class="name">BirdViewer$MockitoMock$2022560382$auxiliary$ks54ntrC</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.t03g06.view.entities;
+&nbsp;
+&nbsp;import com.t03g06.model.GameConstants;
+&nbsp;import com.t03g06.model.entities.Bird;
+&nbsp;import com.googlecode.lanterna.TextColor;
+&nbsp;import com.googlecode.lanterna.graphics.TextGraphics;
+&nbsp;
+&nbsp;public class BirdViewer {
+&nbsp;    private final Bird bird;
+&nbsp;    private final TextGraphics tg;
+&nbsp;
+<b class="fc">&nbsp;    public BirdViewer(Bird bird, TextGraphics tg) {</b>
+<b class="fc">&nbsp;        this.bird = bird;</b>
+<b class="fc">&nbsp;        this.tg = tg;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void draw() {
+&nbsp;        // desenha o bird
+<b class="fc">&nbsp;        tg.setForegroundColor(TextColor.ANSI.YELLOW_BRIGHT);</b>
+<b class="fc">&nbsp;        tg.putString(GameConstants.WIDTH / 4, bird.getY(), &quot;O&quot;);</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-23 00:52</div>
+</div>
+</body>
+</html>

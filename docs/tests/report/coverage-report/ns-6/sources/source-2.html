@@ -1,0 +1,216 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > CollisionManager</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.t03g06.model.managers</a>
+</div>
+
+<h1>Coverage Summary for Class: CollisionManager (com.t03g06.model.managers)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CollisionManager</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (17/34)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    89.3%
+  </span>
+  <span class="absValue">
+    (25/28)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">CollisionManager$MockitoMock$872672393</td>
+  </tr>
+  <tr>
+    <td class="name">CollisionManager$MockitoMock$872672393$auxiliary$AysbjGVm</td>
+  </tr>
+  <tr>
+    <td class="name">CollisionManager$MockitoMock$872672393$auxiliary$C5HKjFfB</td>
+  </tr>
+  <tr>
+    <td class="name">CollisionManager$MockitoMock$872672393$auxiliary$KPzXxtKf</td>
+  </tr>
+  <tr>
+    <td class="name">CollisionManager$MockitoMock$872672393$auxiliary$KyOihNqy</td>
+  </tr>
+  <tr>
+    <td class="name">CollisionManager$MockitoMock$872672393$auxiliary$lLJCWa2i</td>
+  </tr>
+  <tr>
+    <td class="name">CollisionManager$MockitoMock$872672393$auxiliary$WGPdKevl</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (17/34)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    89.3%
+  </span>
+  <span class="absValue">
+    (25/28)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.t03g06.model.managers;
+&nbsp;
+&nbsp;import com.t03g06.model.GameConstants;
+&nbsp;import com.t03g06.model.entities.Bird;
+&nbsp;import com.t03g06.model.entities.Coin;
+&nbsp;import com.t03g06.model.entities.Pipe;
+&nbsp;import com.t03g06.model.entities.SpeedModifier;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+<b class="fc">&nbsp;public class CollisionManager {</b>
+&nbsp;    // checa colisão do bird com pipe
+&nbsp;    public boolean checkPipeCollision(Bird bird, List&lt;Pipe&gt; pipes) {
+<b class="fc">&nbsp;        int birdX = GameConstants.WIDTH / 4;</b>
+<b class="fc">&nbsp;        int birdY = bird.getY();</b>
+&nbsp;
+<b class="pc">&nbsp;        for (Pipe pipe : pipes) {</b>
+<b class="pc">&nbsp;            if (birdX &gt;= pipe.getX() &amp;&amp; birdX &lt;= pipe.getX() + GameConstants.PIPE_WIDTH) {</b>
+<b class="pc">&nbsp;                if (birdY &lt; pipe.getGapStart() || birdY &gt;= pipe.getGapStart() + pipe.getGapSize()) {</b>
+<b class="fc">&nbsp;                    return true; // colidiu com pipe</b>
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // colisão do bird com coins
+&nbsp;    public boolean checkCoinCollision(Bird bird, List&lt;Coin&gt; coins) {
+<b class="fc">&nbsp;        int birdX = GameConstants.WIDTH / 4;</b>
+<b class="fc">&nbsp;        int birdY = bird.getY();</b>
+&nbsp;
+<b class="pc">&nbsp;        for (int i = 0; i &lt; coins.size(); i++) {</b>
+<b class="fc">&nbsp;            Coin coin = coins.get(i);</b>
+<b class="pc">&nbsp;            if (birdX &gt;= coin.getX() &amp;&amp; birdX &lt; coin.getX() + GameConstants.COIN_WIDTH &amp;&amp;</b>
+<b class="pc">&nbsp;                    birdY &gt;= coin.getY() &amp;&amp; birdY &lt; coin.getY() + GameConstants.COIN_HEIGHT) {</b>
+<b class="fc">&nbsp;                coins.remove(i);</b>
+<b class="fc">&nbsp;                return true; // colidiu com coin</b>
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // colisão do bird com speedModifiers
+&nbsp;    public boolean checkSpeedModifierCollision(Bird bird, List&lt;SpeedModifier&gt; speedModifiers) {
+<b class="fc">&nbsp;        int birdX = GameConstants.WIDTH / 4;</b>
+<b class="fc">&nbsp;        int birdY = bird.getY();</b>
+&nbsp;
+<b class="pc">&nbsp;        for (int i = 0; i &lt; speedModifiers.size(); i++) {</b>
+<b class="fc">&nbsp;            SpeedModifier sm = speedModifiers.get(i);</b>
+<b class="pc">&nbsp;            if (birdX &gt;= sm.getX() &amp;&amp; birdX &lt; sm.getX() + GameConstants.SPEED_MODIFIER_WIDTH &amp;&amp;</b>
+<b class="pc">&nbsp;                    birdY &gt;= sm.getY() &amp;&amp; birdY &lt; sm.getY() + GameConstants.SPEED_MODIFIER_HEIGHT) {</b>
+<b class="fc">&nbsp;                speedModifiers.remove(i);</b>
+<b class="fc">&nbsp;                return true; // colidiu com SpeedModifier</b>
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // checa colisão do bird com o chão ou teto
+&nbsp;    public boolean checkBoundaryCollision(Bird bird) {
+<b class="fc">&nbsp;        int birdY = bird.getY();</b>
+<b class="pc">&nbsp;        return birdY &lt; 0 || birdY &gt;= GameConstants.HEIGHT;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-23 00:52</div>
+</div>
+</body>
+</html>

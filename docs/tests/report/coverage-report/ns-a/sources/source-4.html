@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > SpeedModifierViewer</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.t03g06.view.entities</a>
+</div>
+
+<h1>Coverage Summary for Class: SpeedModifierViewer (com.t03g06.view.entities)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SpeedModifierViewer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/9)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SpeedModifierViewer$MockitoMock$1534006425</td>
+  </tr>
+  <tr>
+    <td class="name">SpeedModifierViewer$MockitoMock$1534006425$auxiliary$fhWg0Q4G</td>
+  </tr>
+  <tr>
+    <td class="name">SpeedModifierViewer$MockitoMock$1534006425$auxiliary$JtTt1pzo</td>
+  </tr>
+  <tr>
+    <td class="name">SpeedModifierViewer$MockitoMock$1534006425$auxiliary$oalqqAaU</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/9)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.t03g06.view.entities;
+&nbsp;
+&nbsp;import com.t03g06.model.entities.SpeedModifier;
+&nbsp;import com.googlecode.lanterna.TextColor;
+&nbsp;import com.googlecode.lanterna.graphics.TextGraphics;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class SpeedModifierViewer {
+&nbsp;    private final List&lt;SpeedModifier&gt; speedModifiers;
+&nbsp;    private final TextGraphics tg;
+&nbsp;
+<b class="fc">&nbsp;    public SpeedModifierViewer(List&lt;SpeedModifier&gt; speedModifiers, TextGraphics tg) {</b>
+<b class="fc">&nbsp;        this.speedModifiers = speedModifiers;</b>
+<b class="fc">&nbsp;        this.tg = tg;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void draw() {
+<b class="fc">&nbsp;        tg.setForegroundColor(TextColor.ANSI.RED_BRIGHT);</b>
+<b class="fc">&nbsp;        for (SpeedModifier speedModifier : speedModifiers) {</b>
+&nbsp;            // desenha um bloco 2x3
+<b class="fc">&nbsp;            tg.putString(speedModifier.getX(), speedModifier.getY(), &quot;&gt;&gt;&quot;);</b>
+<b class="fc">&nbsp;            tg.putString(speedModifier.getX(), speedModifier.getY() + 1, &quot;&gt;&gt;&quot;);</b>
+<b class="fc">&nbsp;            tg.putString(speedModifier.getX(), speedModifier.getY() + 2, &quot;&gt;&gt;&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        tg.setForegroundColor(TextColor.ANSI.BLUE);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-23 00:52</div>
+</div>
+</body>
+</html>

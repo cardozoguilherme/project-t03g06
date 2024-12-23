@@ -1,0 +1,205 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > Leaderboard</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.t03g06.model.menu</a>
+</div>
+
+<h1>Coverage Summary for Class: Leaderboard (com.t03g06.model.menu)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Leaderboard</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    56.2%
+  </span>
+  <span class="absValue">
+    (9/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91.7%
+  </span>
+  <span class="absValue">
+    (22/24)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Leaderboard$MockitoMock$1974792407</td>
+  </tr>
+  <tr>
+    <td class="name">Leaderboard$MockitoMock$1974792407$auxiliary$102zcExE</td>
+  </tr>
+  <tr>
+    <td class="name">Leaderboard$MockitoMock$1974792407$auxiliary$9FFfGUr6</td>
+  </tr>
+  <tr>
+    <td class="name">Leaderboard$MockitoMock$1974792407$auxiliary$PJx2HWV3</td>
+  </tr>
+  <tr>
+    <td class="name">Leaderboard$MockitoMock$1974792407$auxiliary$rVeiCbHp</td>
+  </tr>
+  <tr>
+    <td class="name">Leaderboard$MockitoMock$1974792407$auxiliary$YyU6i23Q</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    56.2%
+  </span>
+  <span class="absValue">
+    (9/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91.7%
+  </span>
+  <span class="absValue">
+    (22/24)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.t03g06.model.menu;
+&nbsp;
+&nbsp;import java.io.*;
+&nbsp;import java.util.*;
+&nbsp;import java.nio.charset.StandardCharsets;
+&nbsp;import java.nio.file.Files;
+&nbsp;import java.nio.file.Paths;
+&nbsp;
+&nbsp;public class Leaderboard {
+<b class="fc">&nbsp;    private final List&lt;Integer&gt; scores = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;    private final int MAX_SIZE = 5;  // máximo de 5 jogadores no leaderboard</b>
+<b class="fc">&nbsp;    private final String filePath = &quot;src/main/java/com/t03g06/leaderboard/leaderboard.txt&quot;;</b>
+&nbsp;
+<b class="fc">&nbsp;    public Leaderboard() {</b>
+<b class="fc">&nbsp;        loadScores();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private void loadScores() {
+<b class="pc">&nbsp;        try (BufferedReader reader = Files.newBufferedReader(Paths.get(filePath), StandardCharsets.UTF_8)) {</b>
+&nbsp;            String line;
+<b class="fc">&nbsp;            while ((line = reader.readLine()) != null) {</b>
+<b class="fc">&nbsp;                scores.add(Integer.parseInt(line.trim()));</b>
+&nbsp;            }
+&nbsp;
+<b class="fc">&nbsp;            scores.sort(Collections.reverseOrder());</b>
+<b class="pc">&nbsp;            if (scores.size() &gt; MAX_SIZE) {</b>
+<b class="nc">&nbsp;                scores.subList(MAX_SIZE, scores.size()).clear();</b>
+&nbsp;            }
+<b class="pc">&nbsp;        } catch (IOException e) {</b>
+<b class="fc">&nbsp;            e.setStackTrace(e.getStackTrace());</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    public void saveScores() {
+<b class="pc">&nbsp;        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(filePath), StandardCharsets.UTF_8)) {</b>
+<b class="fc">&nbsp;            for (int score : scores) {</b>
+<b class="fc">&nbsp;                writer.write(score + System.lineSeparator());</b>
+&nbsp;            }
+<b class="pc">&nbsp;        } catch (IOException e) {</b>
+<b class="nc">&nbsp;            e.setStackTrace(e.getStackTrace());</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Integer&gt; getTopScores() {
+<b class="fc">&nbsp;        return new ArrayList&lt;&gt;(scores);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void addScore(int score) {
+<b class="fc">&nbsp;        scores.add(score);</b>
+<b class="fc">&nbsp;        scores.sort(Collections.reverseOrder());</b>
+<b class="fc">&nbsp;        if (scores.size() &gt; MAX_SIZE) {</b>
+<b class="fc">&nbsp;            scores.removeLast();</b>
+&nbsp;        }
+<b class="fc">&nbsp;        saveScores();</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-23 00:52</div>
+</div>
+</body>
+</html>
