@@ -48,17 +48,17 @@ The State Pattern was used to encapsulate each game state’s behavior in a subc
 
 The State Pattern was implemented to manage the game's various states (e.g., menu, game, game over) by encapsulating state-specific behavior into separate subclasses of the abstract State class. Each state defines its unique behavior by implementing the abstract methods getViewer and getController, which provide the appropriate viewer and controller for that state. The step method, defined in the State class, is shared across all states and ensures a consistent flow of input handling, logic updates, and rendering.
 
-![StatePatternUML.png](docs/images/uml/StatePatternUML.png)
+![StatePatternUML.png](images%2Fuml%2FStatePatternUML.png)
 
 These classes can be found in the following files:
 
-- [State]()
-- [MenuState]()
-- [GameOverState]()
-- [GameState]()
-- [LeaderboardState]()
-- [HowToPlayState]()
-- [Game]()
+- [State](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/State.java)
+- [MenuState](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/MenuState.java)
+- [GameOverState](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/GameOverState.java)
+- [GameState](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/GameState.java)
+- [LeaderboardState](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/LeaderboardState.java)
+- [HowToPlayState](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/HowToPlayState.java)
+- [Game](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/Game.java)
 
 **Consequences**
 
@@ -86,8 +86,8 @@ In the Game class, the game loop is implemented in the start() method, where it 
 
 These classes can be found in the following files:
 
-- [Game]()
-- [State]()
+- [Game](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/Game.java)
+- [State](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/State.java)
 
 **Consequences**
 
@@ -111,12 +111,12 @@ The abstract class State defines the factory methods getViewer() and getControll
 ![FactoryMethodPatternUML.png](images%2Fuml%2FFactoryMethodPatternUML.png)
 
 These classes can be found in the following files: 
-- [State]()
-- [MenuState]()
-- [GameOverState]()
-- [GameState]()
-- [LeaderboardState]()
-- [HowToPlayState]()
+- [State](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/State.java)
+- [MenuState](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/MenuState.java)
+- [GameOverState](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/GameOverState.java)
+- [GameState](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/GameState.java)
+- [LeaderboardState](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/LeaderboardState.java)
+- [HowToPlayState](https://github.com/FEUP-LDTS-2024/project-t03g06/blob/master/src/main/java/com/t03g06/states/HowToPlayState.java)
 
 **Consequences**
 
@@ -139,13 +139,13 @@ The GameModel class has three key code smells: Long Method, Large Class, and Fea
 
 ![CoverageReport.png](tests%2Fscreenshots%2FCoverageReport.png)
 
-[Link to coverage report]
+[Link to coverage report](https://github.com/FEUP-LDTS-2024/project-t03g06/tree/master/docs/tests/report/coverage-report)
 
 **Screenshot of mutation testing report**
 
-![CoverageReport.png](tests%2Fscreenshots%2FCoverageReport.png)
+![CoverageReport.png](tests%2Fscreenshots%2FMutationTestReport.png)
 
-[Link to mutation testing report]
+[Link to mutation testing report](https://github.com/FEUP-LDTS-2024/project-t03g06/tree/master/docs/tests/report/pitest)
 
 ------
 
