@@ -3,7 +3,9 @@ The game is inspired by the popular "Flappy Bird." Players control Flappy, a bir
 
 The game has no predefined end and only concludes when the player collides with an obstacle.
 
-This project was developed by Guilherme Cardozo de Castro Melo (up202401169@edu.fe.up.pt), Tiago Zou Yin (up202306438@edu.fe.up.pt), and Fernando Oliveira (up201005231@edu.fe.up.pt) for LTDS 2024–2025.
+This project was developed by Guilherme Cardozo (up202401169@edu.fe.up.pt), Tiago Zou Yin (up202306438@edu.fe.up.pt), and Fernando Oliveira (up201005231@edu.fe.up.pt) for LTDS 2024–2025. The objective of the project was to use Git as a version control tool, use Java as an object-oriented programming language, develop unit tests using JUnit, apply SOLID principles in application development, apply design patterns to solve problems in application development, identify code smells in object-oriented code, use refactoring techniques to improve non-functional attributes and resolve code smells, apply the MVC architectural pattern in event-driven application design, and patterns of enterprise applications.
+
+**Final project grade: 19.1**
 
 For a more detailed version of this description click [here](./docs/README.md).
 
